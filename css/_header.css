@@ -1,0 +1,17 @@
+
+nav {
+    display: flex;
+   
+    align-items: center;
+    /* padding: 20px 40px; */
+    justify-content:space-between;
+    position: static;
+    font-family: var(--ff1);
+  }
+  a {
+    font-size: .95em;
+  }
+#logoCia{
+    width: 50%;
+    height: 50%;
+}
