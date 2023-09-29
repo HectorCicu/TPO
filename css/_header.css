@@ -1,17 +1,50 @@
-
 nav {
-    display: flex;
-   
-    align-items: center;
-    /* padding: 20px 40px; */
-    justify-content:space-between;
-    position: static;
-    font-family: var(--ff1);
-  }
-  a {
-    font-size: .95em;
-  }
+  display: flex;
+  background-color: var(--bg-color);
+  align-items: center;
+  padding: 20px 40px;
+  justify-content: space-between;
+  position: static;
+}
+
+nav h1 {
+  color: var(--primary-color);
+}
+
+nav ul {
+  display: flex;
+
+  gap: 10px;
+}
+
+.menubar {
+  /* display: none; */
+  cursor: pointer;
+}
 #logoCia{
-    width: 50%;
-    height: 50%;
+width: 10%;
+height: 10%;
+}
+/* MEDIA QUERY  para que el bloque 
+de código css sea responsive */
+
+@media screen and (max-width: 720px) {
+  .menubar {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    background-color: var(--bg-color);
+    align-items: center;
+    padding: 20px 40px;
+    justify-content: space-between;
+    position: static;
+    flex-direction: column;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 }
