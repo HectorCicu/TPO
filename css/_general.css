@@ -3,28 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+  border: 1px solid rgb(100, 74, 74);
   /* display: grid;
     grid-template-rows:15% 70% 15%; */
-}
-/* body {
-  display: grid;
-  grid-template-rows: 1fr 7fr 1fr;
-  gap: 2em; 
-  justify-content: space-between;
-} */
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  color: blue;
-}
-
-body {
-  font-family: var(--ff1);
 }
