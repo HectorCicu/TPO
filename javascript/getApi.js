@@ -1,77 +1,57 @@
 const carousel = document.querySelector("#carousel-ofertas");
 let result;
 let resulta;
+var contador;
+var html = "";
+var imagen;
+var armado =
+  '<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner">';
+var finArmado = "</div>";
+var armadoTotal = "";
 
 async function getDrinksByCategory() {
-  let resp = await fetch(
+  const resp = await fetch(
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink"
   );
   const data = await resp.json();
-  console.log("DATA   " + data.drinks);
-  //console.log(JSON.stringify(data, null, 2));
-  return data;
+  //console.log("DATA   " + data.drinks);
+
+  return data.drinks;
 }
 var tarjeta = "";
-async function armarTarjetas() {
-  // let cuerpo = document.getElementById("principal");
-  var nuevaCard = document.createElement("div");
-  let cards = await getDrinksByCategory();
-  // console.dir("CARDS      " + JSON.stringify(data, null, 2));
-  // console.log("typeof   " + typeof cards);
 
-  // console.log("ARMARTARJETA - TARJETA: " + cards);
 
-  // for (let i in cards.drinks) {
-  //   console.log("consolelog  " + i.strDrink)
-  // }
+async function actualizarCarousel() {
+  const cocktails = await getDrinksByCategory();
 
-  return cards;
-}
-//armarTarjetas();
 
-// function agregarImg(n) {
-//   m = "./img/Logo.png";
-
-//   imagen = `<img src="${n.images[0]}" class="d-block w-40" alt="${n.title}" />`;
-//   //console.log("IMAGEN =" + imagen);
-//   //document.body.appendChild(img)
-//   return imagen;
-// }
-
-var imagen;
-var armado = '<div class="carousel-item active">';
-var finArmado = "</div>";
-var armadoTotal = "";
-var nuevaCard = "";
-// function incorporoImg() {
-//   let a = async function () {};
-// }
-var app = "";
-document.addEventListener("DOMContentLoaded", async function () {
-  var nuevaCard = document.querySelector("#carousel-ofertas");
-  var resulta = await armarTarjetas();
-  //console.log("RESULTA   " + resulta);
-  let contador = 0;
-  for (let e of resulta.drinks) {
-    nuevaCard.innerHTML = `<div class="card" style="width: 18rem;">
-  <img src="${e.strDrinkThumb}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${e.strDrink}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">${e.strDrink}</a>
-  </div>
-  </div>`;
-    console.log("EEEEE  " + e.strDrink);
-    console.log("EEEEE1  " + e.strDrinkThumb);
-    console.log("nuevaCard " + nuevaCard);
-    //cuerpo.appendChild(nuevaCard);
-    //cuerpo.appendChild(nuevaCard.cloneNode(true));
-    //}
+  let coct = Object.values(cocktails);
+  //console.log("coct  ---<" + coct[1].strDrinkThumb);
+  contador = 0;
+  coct.forEach((element) => {
     contador++;
-    if (contador < 8) {
-      armadoTotal = armadoTotal + armado + nuevaCard + finArmado;
+    if (contador < 10) {
+      if (contador == 1) {
+        html +=
+          `<div class="carousel-item active">` + crearTarjeta(coct[contador]);
+      } else {
+        html += `<div class="carousel-item">` + crearTarjeta(coct[contador]);
+      }
     }
-  }
-  carousel.innerHTML = armadoTotal;
-  console.log("armadoTotal " + armadoTotal);
-});
+
+  });
+  var nuevaCard = document.createElement("div");
+  carousel.innerHTML = armado + html + finArmado;
+  //console.log(carousel);
+}
+
+
+function crearTarjeta(e) {
+ // console.log("Crear Tarjeta" + e.strDrink);
+  return `
+  <img src="${e.strDrinkThumb}" class="d-block w-60" alt="${e.strDrink}">
+ 
+ </div>`;
+}
+actualizarCarousel();
+

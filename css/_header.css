@@ -1,10 +1,11 @@
 nav {
   display: flex;
+
   background-color: var(--bg-color);
   align-items: center;
   padding: 20px 40px;
   justify-content: space-between;
-  position: static;
+  /* position: static; */
 }
 
 nav h1 {
@@ -14,16 +15,17 @@ nav h1 {
 nav ul {
   display: flex;
 
-  gap: 10px;
+  gap: 20px;
 }
 
 .menubar {
   /* display: none; */
   cursor: pointer;
+  list-style: none;
 }
 #logoCia{
-width: 10%;
-height: 10%;
+width: 8%;
+height: 8%;
 }
 /* MEDIA QUERY  para que el bloque 
 de código css sea responsive */
@@ -39,12 +41,12 @@ de código css sea responsive */
     align-items: center;
     padding: 20px 40px;
     justify-content: space-between;
-    position: static;
+    /* position: static; */
     flex-direction: column;
   }
   nav ul {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
   }
 }
