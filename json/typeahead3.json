@@ -1,0 +1,512 @@
+{
+  "status": 200,
+  "msg": null,
+  "results": {
+    "data": [
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "297704",
+          "name": "Bandung",
+          "latitude": "-6.911733",
+          "longitude": "107.61102",
+          "timezone": "Asia/Jakarta",
+          "location_string": "Bandung, Indonesia",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/12/33/b5/d7/p-20180218-153409-largejpg.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/12/33/b5/d7/p-20180218-153409-largejpg.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "2048",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/12/33/b5/d7/p-20180218-153409-largejpg.jpg",
+                "height": "1152"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/12/33/b5/d7/p-20180218-153409-largejpg.jpg",
+                "height": "309"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/12/33/b5/d7/p-20180218-153409-largejpg.jpg",
+                "height": "141"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2018-03-01T02:35:03-0500",
+            "caption": "",
+            "id": "305378775",
+            "helpful_votes": "116",
+            "published_date": "2018-03-01T02:35:03-0500",
+            "user": { "user_id": null, "member_id": "0", "type": "user" }
+          },
+          "default_options": [
+            { "key": "overview", "name": "Bandung Overview" },
+            { "key": "restaurants", "name": "Restaurants" },
+            { "key": "things_to_do", "name": "Things to Do" },
+            { "key": "lodging", "name": "Hotels" },
+            { "key": "vacation_rentals", "name": "Vacation Rentals" },
+            { "key": "flights_to", "name": "Flights" }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": true,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "Bandung is Indonesia's third-largest city but lies close enough to Jakarta and offers cooler weather. Bandung features a large collection of Dutch Colonial architecture, as well as a beautiful botanic garden, zoo, golf courses and a wide variety of culinary offerings.",
+          "ancestors": [
+            {
+              "subcategory": [{ "key": "province", "name": "Province" }],
+              "name": "West Java",
+              "abbrv": null,
+              "location_id": "2301792"
+            },
+            {
+              "subcategory": [{ "key": "region", "name": "Region" }],
+              "name": "Java",
+              "abbrv": null,
+              "location_id": "294228"
+            },
+            {
+              "subcategory": [{ "key": "country", "name": "Country" }],
+              "name": "Indonesia",
+              "abbrv": null,
+              "location_id": "294225"
+            }
+          ],
+          "parent_display_name": "Indonesia",
+          "guide_count": "0"
+        },
+        "scope": "local"
+      },
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "51758",
+          "name": "Bandon",
+          "latitude": "43.11683",
+          "longitude": "-124.41441",
+          "timezone": "America/Los_Angeles",
+          "location_string": "Bandon, Oregon",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/08/f6/c1/e8/face-rock-state-scenic.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/08/f6/c1/e8/face-rock-state-scenic.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "1335",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/08/f6/c1/e8/face-rock-state-scenic.jpg",
+                "height": "1000"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/08/f6/c1/e8/face-rock-state-scenic.jpg",
+                "height": "411"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/08/f6/c1/e8/face-rock-state-scenic.jpg",
+                "height": "187"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2015-09-17T16:52:03-0400",
+            "caption": "Face Rock beach. Photos by www.AperturaFotos.com",
+            "id": "150389224",
+            "helpful_votes": "16",
+            "published_date": "2015-09-17T16:52:03-0400",
+            "user": { "user_id": null, "member_id": "0", "type": "user" }
+          },
+          "default_options": [
+            { "key": "overview", "name": "Bandon Overview" },
+            { "key": "restaurants", "name": "Restaurants" },
+            { "key": "things_to_do", "name": "Things to Do" },
+            { "key": "lodging", "name": "Hotels" },
+            { "key": "vacation_rentals", "name": "Vacation Rentals" },
+            { "key": "flights_to", "name": "Flights" }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": true,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "",
+          "ancestors": [
+            {
+              "subcategory": [{ "key": "region", "name": "Region" }],
+              "name": "Oregon Coast",
+              "abbrv": null,
+              "location_id": "1438848"
+            },
+            {
+              "subcategory": [{ "key": "state", "name": "State" }],
+              "name": "Oregon",
+              "abbrv": "OR",
+              "location_id": "28958"
+            },
+            {
+              "subcategory": [{ "key": "country", "name": "Country" }],
+              "name": "United States",
+              "abbrv": null,
+              "location_id": "191"
+            }
+          ],
+          "parent_display_name": "Oregon",
+          "guide_count": "0"
+        },
+        "scope": "local"
+      },
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "55439",
+          "name": "Bandera",
+          "latitude": "29.72557",
+          "longitude": "-99.06942",
+          "timezone": "America/Chicago",
+          "location_string": "Bandera, Texas",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/0a/84/13/7f/the-views-from-the-top.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/0a/84/13/7f/the-views-from-the-top.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "2048",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/0a/84/13/7f/the-views-from-the-top.jpg",
+                "height": "768"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/0a/84/13/7f/the-views-from-the-top.jpg",
+                "height": "206"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/0a/84/13/7f/the-views-from-the-top.jpg",
+                "height": "94"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2016-03-05T22:18:44-0500",
+            "caption": "The views from the top of trails 5a and 5b",
+            "id": "176427903",
+            "helpful_votes": "8",
+            "published_date": "2016-03-05T22:18:44-0500",
+            "user": { "user_id": null, "member_id": "0", "type": "user" }
+          },
+          "default_options": [
+            { "key": "overview", "name": "Bandera Overview" },
+            { "key": "restaurants", "name": "Restaurants" },
+            { "key": "things_to_do", "name": "Things to Do" },
+            { "key": "lodging", "name": "Hotels" },
+            { "key": "vacation_rentals", "name": "Vacation Rentals" },
+            { "key": "flights_to", "name": "Flights" }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": false,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "",
+          "ancestors": [
+            {
+              "subcategory": [{ "key": "county", "name": "County" }],
+              "name": "Bandera County",
+              "abbrv": null,
+              "location_id": "8788115"
+            },
+            {
+              "subcategory": [{ "key": "state", "name": "State" }],
+              "name": "Texas",
+              "abbrv": "TX",
+              "location_id": "28964"
+            },
+            {
+              "subcategory": [{ "key": "country", "name": "Country" }],
+              "name": "United States",
+              "abbrv": null,
+              "location_id": "191"
+            }
+          ],
+          "parent_display_name": "Texas",
+          "guide_count": "0"
+        },
+        "scope": "local"
+      },
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "2368232",
+          "name": "Bandarban",
+          "latitude": "22.19483",
+          "longitude": "92.21952",
+          "timezone": "Asia/Dhaka",
+          "location_string": "Bandarban, Bangladesh",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/0d/77/22/14/amiakhum.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/0d/77/22/14/amiakhum.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "2048",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/0d/77/22/14/amiakhum.jpg",
+                "height": "1536"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/0d/77/22/14/amiakhum.jpg",
+                "height": "413"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/0d/77/22/14/amiakhum.jpg",
+                "height": "188"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2016-10-30T10:36:43-0400",
+            "caption": "Amiakhum",
+            "id": "225911316",
+            "helpful_votes": "30",
+            "published_date": "2016-10-30T10:36:43-0400",
+            "user": { "user_id": null, "member_id": "0", "type": "user" }
+          },
+          "default_options": [
+            { "key": "overview", "name": "Bandarban Overview" },
+            { "key": "restaurants", "name": "Restaurants" },
+            { "key": "things_to_do", "name": "Things to Do" },
+            { "key": "lodging", "name": "Hotels" },
+            { "key": "flights_to", "name": "Flights" }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": false,
+          "has_attraction_coverpage": true,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "",
+          "ancestors": [
+            {
+              "subcategory": [{ "key": "region", "name": "Region" }],
+              "name": "Chittagong Division",
+              "abbrv": null,
+              "location_id": "667480"
+            },
+            {
+              "subcategory": [{ "key": "country", "name": "Country" }],
+              "name": "Bangladesh",
+              "abbrv": null,
+              "location_id": "293935"
+            }
+          ],
+          "parent_display_name": "Bangladesh",
+          "guide_count": "0"
+        },
+        "scope": "local"
+      },
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "293938",
+          "name": "Bandar Seri Begawan",
+          "latitude": "4.8919",
+          "longitude": "114.94044",
+          "timezone": "Asia/Brunei",
+          "location_string": "Bandar Seri Begawan, Brunei Darussalam",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/10/6b/52/d0/tasek-lama-recreational.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/10/6b/52/d0/tasek-lama-recreational.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "1920",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/10/6b/52/d0/tasek-lama-recreational.jpg",
+                "height": "1080"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/10/6b/52/d0/tasek-lama-recreational.jpg",
+                "height": "309"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/10/6b/52/d0/tasek-lama-recreational.jpg",
+                "height": "141"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2017-08-25T08:54:22-0400",
+            "caption": "",
+            "id": "275469008",
+            "helpful_votes": "64",
+            "published_date": "2017-08-25T08:54:22-0400",
+            "user": { "user_id": null, "member_id": "0", "type": "user" }
+          },
+          "default_options": [
+            { "key": "overview", "name": "Bandar Seri Begawan Overview" },
+            { "key": "restaurants", "name": "Restaurants" },
+            { "key": "things_to_do", "name": "Things to Do" },
+            { "key": "lodging", "name": "Hotels" },
+            { "key": "vacation_rentals", "name": "Vacation Rentals" },
+            { "key": "flights_to", "name": "Flights" }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": true,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "Bandar Seri Begawan is a city of two terrains: the stilted water villages that make up some of the city's historic aquatic districts stretch out into the sea, while drier districts spread out over the flatter areas of land. The beaches around the area offer vibrant undersea life, drawing scuba enthusiasts and snorkelers from around the world. Above ground the gold-domed Sultan Omar Ali Saifuddin Mosque dazzles with its intricate marble design and museums provide ample cultural stimulation.",
+          "ancestors": [
+            {
+              "subcategory": [{ "key": "district", "name": "District" }],
+              "name": "Brunei-Muara District",
+              "abbrv": null,
+              "location_id": "3685330"
+            },
+            {
+              "subcategory": [{ "key": "country", "name": "Country" }],
+              "name": "Brunei Darussalam",
+              "abbrv": null,
+              "location_id": "293937"
+            }
+          ],
+          "parent_display_name": "Brunei Darussalam",
+          "guide_count": "0"
+        },
+        "scope": "local"
+      },
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "2412240",
+          "name": "Bandar Baru Bangi",
+          "latitude": "2.96222",
+          "longitude": "101.76113",
+          "timezone": "Asia/Kuala_Lumpur",
+          "location_string": "Bandar Baru Bangi, Malaysia",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/18/6a/40/3d/bandar-baru-bangi-section.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/18/6a/40/3d/bandar-baru-bangi-section.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "1152",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/18/6a/40/3d/bandar-baru-bangi-section.jpg",
+                "height": "648"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/18/6a/40/3d/bandar-baru-bangi-section.jpg",
+                "height": "309"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/18/6a/40/3d/bandar-baru-bangi-section.jpg",
+                "height": "141"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2019-07-21T20:37:11-0400",
+            "caption": "Bandar Baru Bangi Section 16 is my occasional home away from home.... lots of local restaurants offring wide choices, and Sate Kajang!!",
+            "id": "409616445",
+            "helpful_votes": "0",
+            "published_date": "2019-07-21T20:37:11-0400",
+            "user": { "user_id": null, "member_id": "0", "type": "user" }
+          },
+          "default_options": [
+            { "key": "overview", "name": "Bandar Baru Bangi Overview" },
+            { "key": "restaurants", "name": "Restaurants" },
+            { "key": "things_to_do", "name": "Things to Do" },
+            { "key": "lodging", "name": "Hotels" },
+            { "key": "vacation_rentals", "name": "Vacation Rentals" },
+            { "key": "flights_to", "name": "Flights" }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": false,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "",
+          "ancestors": [
+            {
+              "subcategory": [{ "key": "district", "name": "District" }],
+              "name": "Hulu Langat District",
+              "abbrv": null,
+              "location_id": "2303990"
+            },
+            {
+              "subcategory": [{ "key": "state", "name": "State" }],
+              "name": "Selangor",
+              "abbrv": null,
+              "location_id": "298310"
+            },
+            {
+              "subcategory": [{ "key": "country", "name": "Country" }],
+              "name": "Malaysia",
+              "abbrv": null,
+              "location_id": "293951"
+            }
+          ],
+          "parent_display_name": "Malaysia",
+          "guide_count": "0"
+        },
+        "scope": "local"
+      }
+    ],
+    "partial_content": false
+  }
+}
