@@ -1,12 +1,13 @@
-:root{
+:root {
+  --ff1: "Exo 2", sans-serif;
+  --ff2: "Rubik Iso", cursive;
+  --ff3: "Yanone Kaffeesatz", sans-serif;
+  --ff4: "Asap", sans-serif;
 
---ff1: 'Exo 2', sans-serif; 
---ff2: 'Rubik Iso', cursive;
---ff3: 'Yanone Kaffeesatz', sans-serif; 
---ff4: 'Asap', sans-serif;
-
---ff5: 'Rubik Iso', cursive;
---ff6: 'Yanone Kaffeesatz', sans-serif;
---bg-color: rgb(158, 158, 202);
-
+  --ff5: "Rubik Iso", cursive;
+  --ff6: "Yanone Kaffeesatz", sans-serif;
+  --bg-color: rgb(134, 241, 166);
+  --bg1-color: rgb(245, 210, 157);
+  --fo-color: rgb(14, 13, 15);
+  --primary-color: rgb(16, 6, 54);
 }

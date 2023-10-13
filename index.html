@@ -21,15 +21,20 @@
   <body>
     <header>
       <nav class="navBar">
-        <img src="./img/cocktail.jpg" alt="Logo Compañía" id="logoCia" />
-        <h1>Nombre Compañía</h1>
-        <ul class="menubar">
-          <!-- <li><h4>MENU</h4></li> -->
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="">Skills</a></li>
-          <li><a href="">Proyecto</a></li>
-          <li><a href="">Contacto</a></li>
-        </ul>
+        <img src="./img/newspaper1.jpg" alt="Logo Compañía" id="logoCia" />
+        <h1>Noticias del Mundo</h1>
+        <div class="container" id="suscr">
+          <div class="container" id="btns">
+            <button id="login">Ingresar</button>
+            <button id="signIn">Registrarse</button>
+          </div>
+          <ul class="menubar">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="">Español</a></li>
+            <li><a href="">Inglés</a></li>
+            <li><a href="">Francés</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main class="principal" id="principal">
@@ -45,8 +50,8 @@
       <aside id="aside1"></aside>
     </main>
 
-    <footer class="piePagina">
-      <div>&copy</div>
+    <footer class="piePagina" id="piePag">
+      <div>&copy Héctor Hugo Cicutti  |  Todos los derechos reservados</div>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -59,10 +64,11 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- <script src="./javascript/operaciones.js"></script>
-    <script src="./javascript/getApi.js"></script>
-    <script src="./javascript/constantes.js"></script> -->
+    <!-- <script src="./javascript/operaciones.js"></script>  -->
+    <!-- <script src="./javascript/getApi.js"></script> -->
+    <!-- <script src="./javascript/constantes.js"></script> --> -->
     <!-- <script src="./javascript/apiResto.js"></script> -->
-   <script src="./javascript/apiNews.js"></script>
+    <!-- <script src="./javascript/apiNews.js"></script> -->
+    <script src="./javascript/apiGnews.js"></script>
   </body>
 </html>

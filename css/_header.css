@@ -1,11 +1,12 @@
 nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
 
-  background-color: var(--bg-color);
+  background-color: var(--bg1-color);
   align-items: center;
   padding: 20px 40px;
   justify-content: space-between;
-  /* position: static; */
+ 
 }
 
 nav h1 {
@@ -13,26 +14,49 @@ nav h1 {
 }
 
 nav ul {
+  padding: 10px;
   display: flex;
 
   gap: 20px;
 }
 
+#btns {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  
+}
+#login, #signIn{
+  border-radius: 6px;
+  color: white;
+  padding: 5px 10px;
+  background-color: rgb(65, 65, 145);
+  font-weight: bold;
+}
 .menubar {
   /* display: none; */
   cursor: pointer;
   list-style: none;
+  
 }
-#logoCia{
-width: 8%;
-height: 8%;
+li{
+  color: red;
 }
+#logoCia {
+  width: 68%;
+  height: 78%;
+}
+.suscr{
+  display: flex;
+}
+
 /* MEDIA QUERY  para que el bloque 
 de código css sea responsive */
 
 @media screen and (max-width: 720px) {
   .menubar {
     display: block;
+
   }
 
   nav {

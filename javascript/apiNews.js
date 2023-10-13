@@ -1,5 +1,7 @@
 /**  ada1a15a59df4c32f1bb7437f62eb490  key para mediStack */
 // ba009d8efc304dbba6fe6a60b6b152d5 mediaStack diarios argentina
+let keyNewsOrg = 'ba009d8efc304dbba6fe6a60b6b152d5'
+let pais = 'us'
 
 /**
  https://api.mediastack.com/newsRun 
@@ -11,8 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
  
   try {
     const response = await fetch(
-      //"https://newsapi.org/v2/top-headlines?country=ar&apiKey=ba009d8efc304dbba6fe6a60b6b152d5" // noticias de Argentina
-      "https://newsapi.org/v2/top-headlines/sources?country=ar&apiKey=ba009d8efc304dbba6fe6a60b6b152d5" // noticias de Argentina
+      `https://newsapi.org/v2/top-headlines?country=${pais}&apiKey=${keyNewsOrg}` // noticias de Argentina
+     //"https://newsapi.org/v2/top-headlines/sources?country=ar&apiKey=ba009d8efc304dbba6fe6a60b6b152d5" // noticias de Argentina
       //"https://newsapi.org/v2/everything?q=keyword&apiKey=ba009d8efc304dbba6fe6a60b6b152d5"
     );
     const result = await response.json();
