@@ -16,7 +16,7 @@ nav h1 {
 nav ul {
   padding: 10px;
   display: flex;
-
+justify-content: space-evenly;
   gap: 20px;
 }
 
@@ -24,6 +24,7 @@ nav ul {
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
+  font-family: var(--ff4);
   
 }
 #login, #signIn{
@@ -39,8 +40,9 @@ nav ul {
   list-style: none;
   
 }
-li{
-  color: red;
+a{
+  
+  color: blue;
 }
 #logoCia {
   width: 68%;
