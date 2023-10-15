@@ -20,43 +20,28 @@
   </head>
   <body>
     <header>
-      <nav class="navBar">
-        <img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />
-        <h1>Portal de Videos</h1>
-        <div class="container" id="suscr">
-          <div class="container" id="btns">
-            <button id="login">Ingresar</button>
-            <button id="signIn">Registrarse</button>
-          </div>
-          <ul class="menubar">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="">Peliculas</a></li>
-            <li><a href="">Series</a></li>
-            
-          </ul>
-        </div>
-      </nav>
+      <nav class="navBar"></nav>
     </header>
     <main class="principal" id="principal">
-     
-        <div
-          id="carouselExampleSlidesOnly"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner" id="carousel-examples"></div>
-        </div>
-     
-      <aside id="aside1">
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" id="carousel-examples"></div>
+      </div>
 
-        aside 1
-        <iframe src="" width="500" height="300"></iframe>
+      <aside id="aside1">
+        <div class="container" id="informacion">
+          <h2 id="aside-contenidoInicial">Información General</h2>
+          <span id="aside-span">
+            Este es un portal para consultar las películas y series preferidas
+          </span>
+        </div>
       </aside>
     </main>
 
-    <footer class="piePagina" id="piePag">
-      <div>&copy Héctor Hugo Cicutti  |  Todos los derechos reservados</div>
-    </footer>
+    <footer class="piePagina" id="piePag"></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -68,12 +53,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- <script src="./javascript/operaciones.js"></script>  -->
-    <!-- <script src="./javascript/getApi.js"></script> -->
-    <!-- <script src="./javascript/constantes.js"></script> --> -->
-    <!-- <script src="./javascript/apiResto.js"></script> -->
-    <!-- <script src="./javascript/apiNews.js"></script> -->
-    <script src="./javascript/omdb.js"></script>
-    <!-- <script src="./javascript/apiGnews.js"></script> -->
+    <script src="./js/omdb.js"></script>
+    <script src="./js/modelado.js"></script>
   </body>
 </html>

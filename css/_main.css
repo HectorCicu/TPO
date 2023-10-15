@@ -1,14 +1,19 @@
+
 .principal {
-  box-sizing: border-box;
+  box-sizing: content-box;
   
   display: grid;
   grid-template-columns: 3fr 4fr;
   grid-auto-flow: colum;
+  
 }
 
 img {
-  width: 60%;
-  height: 50%;
+  box-sizing: content-box;
+   /* max-width: 350px; */
+  /*height: 390px; */
+  max-height: 390px;
+margin-left: 15%;
 }
 
 aside {

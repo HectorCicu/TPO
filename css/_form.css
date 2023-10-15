@@ -8,6 +8,9 @@
   background-color: #171717;
   border-radius: 25px;
   transition: 0.4s ease-in-out;
+  max-height: 380px;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .form:hover {
@@ -55,14 +58,23 @@
   justify-content: center;
   flex-direction: row;
   margin-top: 2.5em;
+  gap: .2em;
 }
 
 .button1 {
-  padding: 0.5em;
+  /* padding: 0.5em;
   padding-left: 1.1em;
   padding-right: 1.1em;
   border-radius: 5px;
   margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-color: #252525;
+  color: white; */
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
   border: none;
   outline: none;
   transition: 0.4s ease-in-out;
