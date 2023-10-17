@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
 
     const result = await response.json();
-    console.log(result.Search);
+    // console.log(result.Search);
 
     for (let i = 0; i < result.Search.length; ++i) {
-      console.log(result.Search[i].Title);
+      // console.log(result.Search[i].Title);
       if (i == 0) {
         html +=
           `<div class="carousel-item active">` + crearTarjeta(result.Search[i]);

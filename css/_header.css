@@ -17,7 +17,6 @@ nav h1 {
 }
 
 nav ul {
-  
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -57,19 +56,31 @@ a {
   display: flex;
 }
 
+#aside-contenidoInicial {
+  text-align: center;
+
+  font-family: var(--ff1);
+  color: rgb(35, 35, 124);
+}
+#aside-span {
+  text-align: justify;
+  font-family: var(--ff1);
+  font-weight: bold;
+  font-size: 1.2em;
+}
 /* ****************************
 GENERAR EL MENU HAMBURGUESA
 ***************************/
 
-#ul-hamburguesa{
+#ul-hamburguesa {
   display: none;
 }
 
-#menu{
-  display:none;
+#menu {
+  display: none;
 }
-#menu:checked  ~ ul{
-  display:block;
+#menu:checked ~ ul {
+  display: block;
 }
 #label-hamburguesa {
   box-sizing: border-box;
@@ -85,25 +96,23 @@ GENERAR EL MENU HAMBURGUESA
 }
 
 /* Estilo del boton cuando se pasa el mouse por encima*/
-#label-hamburguesa:hover{
+#label-hamburguesa:hover {
   background: grey;
 }
 
 /* Estilo del boton cuando el menú está expandido*/
 #menu:checked ~ label {
-  background: lightgrey; 
+  background: lightgrey;
 }
 
-#ul-hamburguesa{
-  margin-top:0;
+#ul-hamburguesa {
+  margin-top: 0;
   padding: 0;
   width: 200px;
-
 }
 
-
 #li-hamburguesa {
-  display:flow-root;
+  display: flow-root;
   background: lightgrey;
   margin: 0;
   padding: 10px;
@@ -116,7 +125,6 @@ GENERAR EL MENU HAMBURGUESA
 #li-hamburguesa:hover {
   filter: brightness(110%);
 }
-
 
 /* MEDIA QUERY  para que el bloque 
 de código css sea responsive */

@@ -1,22 +1,20 @@
-
 .principal {
   box-sizing: content-box;
-  
+
   display: grid;
   grid-template-columns: 3fr 4fr;
   grid-auto-flow: colum;
-  
+  padding-top: 10px;
 }
 
 img {
   box-sizing: content-box;
-   /* max-width: 350px; */
+  /* max-width: 350px; */
   /*height: 390px; */
   max-height: 390px;
-margin-left: 15%;
+  margin-left: 15%;
 }
 
 aside {
   padding: 10px 30px 10px 30px;
- 
 }
