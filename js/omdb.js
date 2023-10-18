@@ -38,15 +38,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       default:
         busqueda = "for";
     }
+    // console.log(`http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&plot=full&page=${pagina}&type="movie"`)
+
     const response = await fetch(
       `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&plot=full&page=${pagina}&type="movie"` // noticias de Argentina
     );
-
     const result = await response.json();
     // console.log(result.Search);
 
     for (let i = 0; i < result.Search.length; ++i) {
-      // console.log(result.Search[i].Title);
+  //  console.log(result.Search[i].Title);
       if (i == 0) {
         html +=
           `<div class="carousel-item active">` + crearTarjeta(result.Search[i]);
