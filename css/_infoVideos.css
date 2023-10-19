@@ -1,0 +1,33 @@
+.infoVideo {
+    box-sizing: content-box;
+  
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-auto-flow: colum;
+    padding-top: 10px;
+  }
+  
+#busquedaTitulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: .5rem;
+    justify-items: center;
+    padding: 1em;
+}
+#busqueda {
+    display: flex;
+    border-radius: 5px;
+    min-width: 28em;
+}
+
+#buscar{
+    display: flex;
+    border-radius: 5px;
+    background-color: black;
+    color: beige;
+
+}
+#buscar:hover {
+    background-color: rgb(102, 85, 85);
+    color: black;
+}
