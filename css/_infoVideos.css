@@ -31,3 +31,8 @@
     background-color: rgb(102, 85, 85);
     color: black;
 }
+
+td, th {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
