@@ -12,9 +12,10 @@ const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" /
     <!-- </div> -->
   </div>
   <ul class="menubar">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="" id="movies">Peliculas</a></li>
-    <li><a href="" id="series">Series</a></li>
+    <li><a href="" id="movies" value="movie">Peliculas</a></li>
+    <li><a href="" id="series" value="series">Series</a></li>
+    <li><a href="index.html">Salir</a></li>
+    
   </ul>
 </div>
 <div class="container" id="hamburguesa">
@@ -113,6 +114,6 @@ ingreso.addEventListener("click", () => {
       </div>
 </form>`;
   aside1.innerHTML = formulario;
-   loginRegister_Ingresar();
-  });
+  loginRegister_Ingresar();
+});
 // });

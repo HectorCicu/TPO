@@ -1,10 +1,10 @@
 .principal {
   box-sizing: border-box;
 
-  display: flex;
-  flex-direction: row;
-  /* grid-template-columns: 3fr 4fr;
-  grid-auto-flow: colum; */
+  display: grid;
+ 
+  grid-template-columns: 3fr 4fr;
+  grid-auto-flow: colum;
   padding-top: 10px;
 }
 

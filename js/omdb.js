@@ -1,10 +1,6 @@
 const carousel = document.querySelector("#carousel-examples");
 
 let omdbKey = "2677da8c";
-// let url = "http://www.omdbapi.com/?i=tt3896198&apikey=";
-// let url2 = "http://www.omdbapi.com/?apikey=";
-// let urlEjemplo =
-//   'http://www.omdbapi.com/?apikey=2677da8c&&s="the"&plot=full&page=20&type="series"';
 
 const divOpen = "";
 var armado = `<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner">`;
@@ -15,50 +11,97 @@ const pagina = Math.round(Math.random() * 20, 0);
 console.log(pagina);
 var parametro = 0;
 var busqueda = "";
-var tipoVideo = "movie";
+var tipoVideo = "series";
 
+////  comienzo la carga de las películas //////
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    parametro = Math.round(Math.random() * 1000, 0) % 5;
-    console.log(parametro);
-    switch (
-      parametro //hago búsquedas 'randoms'
-    ) {
-      case 1:
-        busqueda = "the";
-        break;
-      case 2:
-        busqueda = "and";
-        break;
-      case 3:
-        busqueda = "war";
-        break;
-      case 4:
-        busqueda = "why";
-        break;
-      default:
-        busqueda = "for";
-    }
-    // console.log(`http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&plot=full&page=${pagina}&type="movie"`)
+    // parametro = Math.round(Math.random() * 1000, 0) % 5;
+    // console.log(parametro);
+    // switch (
+    //   parametro //hago búsquedas 'randoms'
+    // ) {
+    //   case 1:
+    //     busqueda = "the";
+    //     break;
+    //   case 2:
+    //     busqueda = "and";
+    //     break;
+    //   case 3:
+    //     busqueda = "war";
+    //     break;
+    //   case 4:
+    //     busqueda = "why";
+    //     break;
+    //   default:
+    //     busqueda = "for";
+    // }
+    // // console.log(`http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&plot=full&page=${pagina}&type="movie"`)
 
-    const response = await fetch(
-      `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}`
-    );
-    const result = await response.json();
+    // const response = await fetch(
+    //   `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}`
+    // );
+    // const result = await response.json();
 
-    if (urlInfo.includes("index.html")) {
-      armar1(result);
-    } else if (urlInfo.includes("infoVideos.html")) {
-      console.log("result " + result);
-      listar(result);
-    }
+    // if (urlInfo.includes("index.html")) {
+    //   armar1(result);
+    // } else if (urlInfo.includes("infoVideos.html")) {
+    //   console.log("result " + result);
+    //   listar(result);
+    // }
+    generoFetch(tipoVideo);
   } catch (error) {
     console.error(error);
   }
 });
 
 ///////////////////////////
+async function generoFetch(tipoV) {
+  parametro = Math.round(Math.random() * 1000, 0) % 5;
+  console.log(parametro);
+  switch (
+    parametro //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
+  ) {
+    case 1:
+      busqueda = "the";
+      break;
+    case 2:
+      busqueda = "and";
+      break;
+    case 3:
+      busqueda = "war";
+      break;
+    case 4:
+      busqueda = "why";
+      break;
+    default:
+      busqueda = "for";
+  }
+  
+  const response = await fetch(
+    `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
+  );
+  const result = await response.json();
 
+  if (urlInfo.includes("index.html")) {
+    armar1(result);
+  } else if (urlInfo.includes("infoVideos.html")) {
+    console.log("result " + result);
+    listar(result);
+  }
+}
+
+//////// creo la tarjeta con el atributo poster del json /////////////////////
+
+function crearTarjeta(e) {
+  //armo la tarjeta que contendrá la película en el carousel
+
+  return `
+     <img src="${e.Poster}" class="d-block w-45" alt="${e.Title}">
+        </div>`;
+}
+
+/// Armo el carousel con las tarjetas  ///
 const armar1 = (result) => {
   for (let i = 0; i < result.Search.length; ++i) {
     //  console.log(result.Search[i].Title);
@@ -72,40 +115,13 @@ const armar1 = (result) => {
   var nuevaCard = document.createElement("div");
   carousel.innerHTML = armado + html + finArmado;
 };
-/////////////////////////////
-
-function crearTarjeta(e) {
-  //armo la tarjeta que contendrá la película en el carousel
-
-  return `
-     <img src="${e.Poster}" class="d-block w-45" alt="${e.Title}">
-        </div>`;
-}
-
 /**Genero una tabla con películas o series */
-let buscarTitulo = document.getElementById("busqueda");
-buscarTitulo.addEventListener("input", async (e) => {
-  const ingresoLetra = e.target.value;
-  try {
-    if (ingresoLetra.length >= 3) {
-      const res = await fetch(
-        `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
-      );
-      const resultado = await res.json();
-      console.log(ingresoLetra);
-      console.log(resultado);
-      listar(resultado);
-    }
-  } catch (error) {
-    console.log(error);
-  }
-});
+
+
 
 const listar = (result) => {
   limpiarTabla();
   let tabla = document.getElementById("tbody-table");
-
-
 
   for (let i = 0; i < result.Search.length; ++i) {
     // console.log(result.Search[i].Title);
@@ -144,14 +160,17 @@ const listar = (result) => {
   }
 }; //armar la lista de peliculas para mostrar
 
+/// limpio la tabla para cuando se realiza búsqueda 
+
 const limpiarTabla = () => {
   let tabla = document.getElementById("tbody-table");
- 
+
   // Eliminar todas las filas (tr) de la tabla
   while (tabla.firstChild) {
-     tabla.removeChild(tabla.firstChild);
+    tabla.removeChild(tabla.firstChild);
   }
- };
+};
+
 
 function buttonClicked(button) {
   let aside = document.getElementById("aside2");
@@ -178,4 +197,5 @@ function buttonClicked(button) {
   // Realiza cualquier otra acción necesaria
 }
 
-/** BUSQUEDA POR TITULO */
+
+/** Genero los eventos para ver si presiono ver películas o series */
