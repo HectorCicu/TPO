@@ -15,6 +15,7 @@ const pagina = Math.round(Math.random() * 20, 0);
 console.log(pagina);
 var parametro = 0;
 var busqueda = "";
+var tipoVideo = "movie";
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // console.log(`http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&plot=full&page=${pagina}&type="movie"`)
 
     const response = await fetch(
-      `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&plot=full&page=${pagina}&type="movie"` // noticias de Argentina
+      `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}`
     );
     const result = await response.json();
 
@@ -81,14 +82,36 @@ function crearTarjeta(e) {
         </div>`;
 }
 
+/**Genero una tabla con películas o series */
+let buscarTitulo = document.getElementById("busqueda");
+buscarTitulo.addEventListener("input", async (e) => {
+  const ingresoLetra = e.target.value;
+  try {
+    if (ingresoLetra.length >= 3) {
+      const res = await fetch(
+        `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
+      );
+      const resultado = await res.json();
+      console.log(ingresoLetra);
+      console.log(resultado);
+      listar(resultado);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 const listar = (result) => {
+  limpiarTabla();
   let tabla = document.getElementById("tbody-table");
 
+
+
   for (let i = 0; i < result.Search.length; ++i) {
-    console.log(result.Search[i].Title);
-    console.log(result.Search[i].Year);
-    console.log(result.Search[i].imdbID);
-    console.log(result.Search[i].Type);
+    // console.log(result.Search[i].Title);
+    // console.log(result.Search[i].Year);
+    // console.log(result.Search[i].imdbID);
+    // console.log(result.Search[i].Type);
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
     td1.textContent = result.Search[i].Title;
@@ -108,8 +131,8 @@ const listar = (result) => {
     //agrego un botón para seleccionar cualquiera de los
     let td5 = document.createElement("td");
     let boton = document.createElement("button");
-    boton.textContent = `Buscar`;
-    boton.id = `${result.Search[i].imdbID}`;
+    boton.textContent = `Detalle`;
+    boton.id = `botonBuscarVideo`;
     boton.value = `${result.Search[i].imdbID}`;
     boton.onclick = () => {
       buttonClicked(boton.value);
@@ -121,10 +144,21 @@ const listar = (result) => {
   }
 }; //armar la lista de peliculas para mostrar
 
+const limpiarTabla = () => {
+  let tabla = document.getElementById("tbody-table");
+ 
+  // Eliminar todas las filas (tr) de la tabla
+  while (tabla.firstChild) {
+     tabla.removeChild(tabla.firstChild);
+  }
+ };
+
 function buttonClicked(button) {
   let aside = document.getElementById("aside2");
   let h2InfoVideos = document.getElementById("titpeli");
   let imgVideo = document.getElementById("imgPeli");
+  let genero = document.getElementById("genre");
+  let elenco = document.getElementById("elenco");
   fetch(
     `http://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
   )
@@ -132,8 +166,9 @@ function buttonClicked(button) {
     .then((data) => {
       if (!data.Error) {
         h2InfoVideos.innerHTML = data.Title;
-       imgVideo.innerHTML= ` <img src=${data.Poster} alt=${data.Title}>`;
-        console.log(data);
+        imgVideo.innerHTML = ` <img src=${data.Poster} alt=${data.Title} id="poster">`;
+        genero.innerHTML = `<strong>Género:</strong>  ${data.Genre}`;
+        elenco.innerHTML = `<strong>Elenco:</strong>  ${data.Actors}`;
       } else {
         alert("No se ha podido encontrar el titulo");
       }
@@ -142,3 +177,5 @@ function buttonClicked(button) {
   console.log("Botón presionado: " + button);
   // Realiza cualquier otra acción necesaria
 }
+
+/** BUSQUEDA POR TITULO */

@@ -1,5 +1,7 @@
 /** modelo el navbar para no tener que repetirlo en cada página
- */
+ 
+
+*/
 let navbar1 = document.querySelector(".navBar");
 const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />
 <h1>Portal de Videos</h1>
@@ -11,8 +13,8 @@ const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" /
   </div>
   <ul class="menubar">
     <li><a href="index.html">Inicio</a></li>
-    <li><a href="">Peliculas</a></li>
-    <li><a href="">Series</a></li>
+    <li><a href="" id="movies">Peliculas</a></li>
+    <li><a href="" id="series">Series</a></li>
   </ul>
 </div>
 <div class="container" id="hamburguesa">

@@ -1,38 +1,76 @@
 .infoVideo {
-    box-sizing: content-box;
-  
-    display: grid;
-    grid-template-columns: 5fr 3fr;
-    grid-auto-flow: colum;
-    padding-top: 10px;
-  }
-  
-#busquedaTitulo{
-    display: flex;
-    flex-direction: row;
-    margin-top: .5rem;
-    justify-items: center;
-    padding: 1em;
+  box-sizing: content-box;
+
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-auto-flow: colum;
+  padding-top: 10px;
+}
+
+#busquedaTitulo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  justify-items: center;
+  padding: 1em;
 }
 #busqueda {
-    display: flex;
-    border-radius: 5px;
-    min-width: 28em;
+  display: flex;
+  border-radius: 5px;
+  min-width: 25em;
 }
-
-#buscar{
-    display: flex;
-    border-radius: 5px;
-    background-color: black;
-    color: beige;
-
+#titpeli{
+text-align: center;
+}
+#buscar {
+  display: flex;
+  border-radius: 5px;
+  background-color: black;
+  color: beige;
 }
 #buscar:hover {
-    background-color: rgb(102, 85, 85);
-    color: black;
+  background-color: rgb(102, 85, 85);
+  color: black;
 }
 
-td, th {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
+td,
+th {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid grey;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2em;
+  background-color: rgb(199, 236, 224);
+}
+table {
+  padding-top: 5px;
+  max-width: 800px;
+}
+#botonBuscarVideo {
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-size: 0.7em;
+}
+#botonBuscarVideo:hover {
+  border-radius: 5px;
+  background-color: rgb(102, 6, 6);
+  color: white;
+  font-size: 0.7em;
+}
+#aside2 {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 10px;
+}
+#imgPeli {
+  border: none;
+  width: 300px;
+  height: 300px;
+
+  overflow: hidden;
+}
+#poster {
+  object-fit: cover;
+}

@@ -26,8 +26,13 @@
     <main class="infoVideo" id="infoVideos">
       <div id="contenedor" class="container">
         <div id="busquedaTitulo">
-          <input type="text" id="busqueda" name="buscar" placeholder="buscar" />
-          <button id="buscar">Buscar</button>
+          <label for="busqueda">Buscar Título</label>
+          <input
+            type="text"
+            id="busqueda"
+            name="buscar"
+            placeholder="buscar - mínimo 3 letras"
+          />
         </div>
         <table>
           <thead>
@@ -36,20 +41,21 @@
               <th>Año</th>
               <th>IMDB ID</th>
               <th>Tipo</th>
-              <th>Detalle</th>
+              <th></th>
             </tr>
           </thead>
-          <tbody id="tbody-table">
-            
-          </tbody>
+          <tbody id="tbody-table"></tbody>
         </table>
-       
+
         <!-- <button id="">Buscar</button> -->
       </div>
       <aside id="aside2">
-
         <h3 id="titpeli"></h3>
         <div id="imgPeli"></div>
+        <div>
+          <p id="genre"></p>
+          <p id="elenco"></p>
+        </div>
       </aside>
     </main>
 

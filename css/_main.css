@@ -1,9 +1,10 @@
 .principal {
-  box-sizing: content-box;
+  box-sizing: border-box;
 
-  display: grid;
-  grid-template-columns: 3fr 4fr;
-  grid-auto-flow: colum;
+  display: flex;
+  flex-direction: row;
+  /* grid-template-columns: 3fr 4fr;
+  grid-auto-flow: colum; */
   padding-top: 10px;
 }
 
@@ -16,5 +17,5 @@ img {
 }
 
 aside {
-  padding: 10px 30px 10px 30px;
+  padding: 5px 10px 5px 10px;
 }
