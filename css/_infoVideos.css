@@ -1,22 +1,27 @@
 .infoVideo {
+  position: relative;
+  bottom: 0;
+  /* height: calc(100%-50px); */
   box-sizing: content-box;
 
   display: grid;
   grid-template-columns: 5fr 3fr;
   grid-auto-flow: colum;
   padding-top: 10px;
+  padding-bottom: 25px;
 }
-
+#contenedor {
+  background-color: aquamarine;
+}
 #busquedaTitulo {
   display: flex;
   flex-direction: row;
   margin-top: 0.5rem;
   justify-items: center;
   padding: 1em;
-  background-color: rgb(122, 122, 204);
 }
 #labelBusqueda {
-  color: white;
+  color: blue;
   font-weight: bold;
   border: none;
   border-radius: 3px;
@@ -29,9 +34,8 @@
 }
 #titpeli {
   text-align: center;
-  width: fit-content;
-  height: fit-content;
 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #buscar {
   display: flex;
@@ -43,7 +47,9 @@
   background-color: rgb(102, 85, 85);
   color: black;
 }
-
+th {
+  text-align: center;
+}
 td,
 th {
   padding-left: 5px;
@@ -72,17 +78,28 @@ table {
 #aside2 {
   display: flex;
   flex-direction: column;
-  position: relative;
+
   margin-right: 10px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  /* max-height: 800px; */
 }
-
+#centroAside2 {
+  display: flex;
+  flex-direction: row;
+}
 #imgPeli {
+  display: flex;
   border: none;
-  width: 300px;
-  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  overflow: auto;
+  justify-content: center;
+  align-content: center;
 
-  overflow: hidden;
+  /* overflow: scroll; */
+}
+#info {
+  padding: 10px;
 }
 #poster {
   object-fit: cover;

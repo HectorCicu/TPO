@@ -46,7 +46,8 @@ function botonClickeado(button) {
   let imgVideo = document.getElementById("imgPeli");
   let genero = document.getElementById("genre");
   let elenco = document.getElementById("elenco");
-  let resumen = document.getElementById("resumen")
+  let resumen = document.getElementById("resumen");
+
   fetch(
     `http://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
   )
@@ -57,7 +58,13 @@ function botonClickeado(button) {
         imgVideo.innerHTML = ` <img src=${data.Poster} alt=${data.Title} id="poster">`;
         genero.innerHTML = `<strong>Género:</strong>  ${data.Genre}`;
         elenco.innerHTML = `<strong>Elenco:</strong>  ${data.Actors}`;
-     resumen.innerHTML = `<strong>Resumen:</strong>  ${data.Plot}`;
+        resumen.innerHTML = `<strong>Resumen:</strong>  ${data.Plot}`;
+        document.getElementById(
+          "anio"
+        ).innerHTML = `<strong>Año: </strong>${data.Year}`;
+        document.getElementById(
+          "valueIMDB"
+        ).innerHTML = `<strong>IMDB: </strong>${data.Ratings[0].Value}`;
       } else {
         alert("No se ha podido encontrar el titulo");
       }
@@ -113,7 +120,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log(error);
     }
   });
-
-  
-  
 });

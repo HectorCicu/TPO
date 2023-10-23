@@ -1,4 +1,6 @@
 function loginRegister_Ingresar() {
+  let usuario;
+  let password;
   var btnLogin = document.querySelector("#buttonI1");
   var btnForgotPass = document.querySelector("#buttonFP");
   console.log("entre en loginregister2");
@@ -15,6 +17,8 @@ function loginRegister_Ingresar() {
       alert("Contraseña Incorrecta");
       aside1.innerHTML = formularioIngreso;
     }
+    sessionStorage.setItem('usuario', usuario1)
+    sessionStorage.setItem('password', password1)
     window.location.href = "infoVideos.html"; //redirigir a la página de muestra de videos
   });
   btnForgotPass.addEventListener("click", (e) => {

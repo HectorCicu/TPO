@@ -10,4 +10,5 @@ footer {
   font-family: var(--ff3);
   font-size: 1.1rem;
   font-weight: bold;
+  height: 30px;
 }
