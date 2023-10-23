@@ -1,0 +1,21 @@
+#button-forgotPassword {
+  background-color: black;
+  color: wheat;
+  border-radius: 5px;
+ 
+}
+
+#forgotP {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(43, 42, 42);
+  gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+#recover-msg, #txt-registro{
+    display: none;
+}
+

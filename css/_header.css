@@ -1,0 +1,167 @@
+nav {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 1fr;
+
+  background-color: var(--bg1-color);
+  align-items: center;
+  padding: 10px 40px;
+  justify-content: space-between;
+}
+
+nav h1 {
+  display: flex;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  font-weight: 700;
+  justify-content: center;
+}
+
+nav ul {
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+
+  gap: 20px;
+}
+
+#btns {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  font-family: var(--ff4);
+}
+#login,
+#signIn {
+  display: flex;
+  border-radius: 6px;
+  color: white;
+  padding: 5px 10px;
+  background-color: rgb(65, 65, 145);
+  font-weight: bold;
+}
+.menubar {
+  /* display: none; */
+  cursor: pointer;
+  list-style: none;
+}
+a {
+  color: blue;
+}
+
+#logoCia {
+  width: 68%;
+  height: 78%;
+}
+.suscr {
+  display: flex;
+}
+
+#aside-contenidoInicial {
+  text-align: center;
+
+  font-family: var(--ff1);
+  color: rgb(35, 35, 124);
+}
+#aside-span {
+  text-align: justify;
+  font-family: var(--ff1);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* ****************************
+GENERAR EL MENU HAMBURGUESA
+***************************/
+
+#ul-hamburguesa {
+  display: none;
+}
+
+#menu {
+  display: none;
+}
+#menu:checked ~ ul {
+  display: block;
+}
+#label-hamburguesa {
+  box-sizing: border-box;
+  display: flow-root;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+}
+
+/* Estilo del boton cuando se pasa el mouse por encima*/
+#label-hamburguesa:hover {
+  background: grey;
+}
+
+/* Estilo del boton cuando el menú está expandido*/
+#menu:checked ~ label {
+  background: lightgrey;
+}
+
+#ul-hamburguesa {
+  margin-top: 0;
+  padding: 0;
+  width: 200px;
+}
+
+#li-hamburguesa {
+  display: flow-root;
+  background: lightgrey;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border-bottom: 1px solid grey;
+  border-radius: 3px;
+}
+
+/*Estilo cuando el mouse pasa encima de cada link del menu*/
+#li-hamburguesa:hover {
+  filter: brightness(110%);
+}
+
+/* MEDIA QUERY  para que el bloque 
+de código css sea responsive */
+
+@media screen and (max-width: 720px) {
+  .menubar {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    background-color: var(--bg-color);
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    /* position: static; */
+    flex-direction: column;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  #btns {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    gap: 0.2em;
+    font-family: var(--ff4);
+    align-content: center;
+    align-items: center;
+  }
+
+  #logoCia {
+    width: 58%;
+    height: 68%;
+  }
+}

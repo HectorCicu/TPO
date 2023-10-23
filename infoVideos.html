@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TPO Grupo 18 - Index</title>
+    <title>TPO Grupo 18 - InfoVideos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,31 +17,48 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
   </head>
   <body>
     <header>
       <nav class="navBar"></nav>
     </header>
-    <main class="principal" id="principal">
-      <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner" id="carousel-examples"></div>
-      </div>
-
-      <aside id="aside1">
-        <div class="container" id="informacion">
-          <h2 id="aside-contenidoInicial">Información General</h2>
-          <span id="aside-span">
-            Este es un portal para consultar sus películas y series preferidas.
-            <br />
-            <br />Ingrese o Regístrese para visualizar el contenido.
-          </span>
+    <main class="infoVideo" id="infoVideos">
+      <div id="contenedor" class="container">
+        <div id="busquedaTitulo">
+          <label for="busqueda" id="labelBusqueda">Buscar Título</label>
+          <input
+            type="text"
+            id="busqueda"
+            name="buscar"
+            placeholder="mínimo 3 letras"
+          />
         </div>
-    
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Año</th>
+              <th>IMDB ID</th>
+              <th>Tipo</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody-table"></tbody>
+        </table>
+      </div>
+      <aside id="aside2">
+        <h4 id="titpeli"></h4>
+        <div id="centroAside2">
+          <div id="imgPeli"></div>
+          <div id="info">
+            <p id="anio"></p>
+            <p id="valueIMDB"></p>
+          </div>
+        </div>
+        <p id="genre"></p>
+        <p id="elenco"></p>
+        <p id="resumen"></p>
       </aside>
     </main>
 
@@ -59,8 +76,6 @@
 
     <script src="./js/omdb.js"></script>
     <script src="./js/modelado.js"></script>
-    <script src="./js/login.js"></script>
-  
-  
+    <script src="./js/videos.js"></script>
   </body>
 </html>
