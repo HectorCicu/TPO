@@ -49,7 +49,7 @@ function botonClickeado(button) {
   let resumen = document.getElementById("resumen");
 
   fetch(
-    `http://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
+    `https://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       if (ingresoLetra.length >= 3) {
         const res = await fetch(
-          `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
+          `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
         );
         const resultado = await res.json();
         // console.log(ingresoLetra);

@@ -47,7 +47,7 @@ async function generoFetch(tipoV) {
   }
   
   const response = await fetch(
-    `http://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
+    `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
   );
   const result = await response.json();
 
