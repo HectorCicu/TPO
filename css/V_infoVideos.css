@@ -63,6 +63,9 @@ table {
   padding-top: 5px;
   max-width: 800px;
 }
+#td-anio {
+  font-size: .9em;
+}
 #botonBuscarVideo {
   border-radius: 5px;
   background-color: black;
@@ -75,6 +78,7 @@ table {
   color: white;
   font-size: 0.7em;
 }
+
 #aside2 {
   display: flex;
   flex-direction: column;

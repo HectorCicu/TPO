@@ -14,6 +14,7 @@ const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" /
   <ul class="menubar">
     <li><a href="" id="movies" value="movie">Peliculas</a></li>
     <li><a href="" id="series" value="series">Series</a></li>
+    <li><a href="" id="alquiler" value="alquilar">Alquilar Película</a></li>
     <li><a href="index.html">Salir</a></li>
     
   </ul>

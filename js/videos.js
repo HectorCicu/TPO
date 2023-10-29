@@ -10,18 +10,22 @@ const listar = (result) => {
     // console.log(result.Search[i].Type);
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
+    td1.id = 'td-id'
     td1.textContent = result.Search[i].Title;
     tr.appendChild(td1);
 
     let td2 = document.createElement("td");
+    td2.id = 'td-anio'
     td2.textContent = result.Search[i].Year;
     tr.appendChild(td2);
 
     let td3 = document.createElement("td");
+    td3.id = 'td-imdb'
     td3.textContent = result.Search[i].imdbID;
     tr.appendChild(td3);
 
     let td4 = document.createElement("td");
+    td4.id = 'td-tipo'
     td4.textContent = result.Search[i].Type;
     tr.appendChild(td4);
     //agrego un botón para seleccionar cualquiera de los
