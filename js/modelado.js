@@ -12,8 +12,10 @@ const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" /
     <!-- </div> -->
   </div>
   <ul class="menubar">
-    <li><a href="" id="movies" value="movie">Peliculas</a></li>
-    <li><a href="" id="series" value="series">Series</a></li>
+    <li><a href="" id="movies" value="movie" class="menu11">Peliculas</a></li>
+    <li><a href="" id="series" value="series" class="menu11">Series</a></li>
+    <li><a href="../../TPO/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+    <li><a href="../../TPO/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
     <li><a href="index.html">Salir</a></li>
     
   </ul>
@@ -46,18 +48,31 @@ let aside1 = document.querySelector("#aside1");
  * para mostrar u ocultar los distintos botones o accesos.
  */
 let menubar = document.querySelector(".menubar");
+let movies1=document.getElementById("movies")
+let series1 = document.getElementById("series")
+let alquilar1 = document.getElementById("alquilar")
+let infoVideo = document.getElementById("infoVideo")
 let botones = document.querySelector("#btns");
 let urlInfo = window.location.href;
 
-console.log(menubar);
+// console.log(menubar);
 /** muestro o saco la barra de películas si estoy o no
  * en la página principal
  */
+console.log(urlInfo);
 if (urlInfo.includes("index.html")) {
   menubar.style.display = "none";
 }
-if (!urlInfo.includes("index.html")) {
+if (urlInfo.includes("infoVideos.html")) {
   botones.style.display = "none";
+ infoVideo.style.display = 'none';
+}
+if (urlInfo.includes("alquilarPeliculas.html")) {
+  botones.style.display = "none";
+  movies1.style.display = 'none';
+  series1.style.display = 'none';
+  alquilar1.style.display = 'none';
+ 
 }
 /** genero formulario de nuevo usuario */
 registro.addEventListener("click", () => {

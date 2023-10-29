@@ -1,4 +1,4 @@
-/** este js es para buscar películas o series */
+/** este js es para buscar películas  */
 const listar = (result) => {
   limpiarTabla();
   let tabla = document.getElementById("tbody-table");
