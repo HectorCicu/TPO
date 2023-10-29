@@ -3,7 +3,7 @@
 
 */
 let navbar1 = document.querySelector(".navBar");
-const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />
+const CABECERA = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
 <h1>Portal de Videos</h1>
 <div class="container" id="suscr">
   <div  id="btns">
@@ -14,8 +14,8 @@ const CABECERA = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" /
   <ul class="menubar">
     <li><a href="" id="movies" value="movie" class="menu11">Peliculas</a></li>
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
-    <li><a href="../../TPO/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
-    <li><a href="../../TPO/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
+    <li><a href="../html/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+    <li><a href="../html/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
     <li><a href="index.html">Salir</a></li>
     
   </ul>

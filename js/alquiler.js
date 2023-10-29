@@ -4,10 +4,7 @@ const listar = (result) => {
   let tabla = document.getElementById("tbody-table");
 
   for (let i = 0; i < result.Search.length; ++i) {
-    // console.log(result.Search[i].Title);
-    // console.log(result.Search[i].Year);
-    // console.log(result.Search[i].imdbID);
-    // console.log(result.Search[i].Type);
+    
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
     td1.id = 'td-id'
@@ -51,6 +48,7 @@ function botonClickeado(button) {
   let genero = document.getElementById("genre");
   let elenco = document.getElementById("elenco");
   let resumen = document.getElementById("resumen");
+  
 
   fetch(
     `https://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
@@ -80,32 +78,10 @@ function botonClickeado(button) {
 document.addEventListener("DOMContentLoaded", async () => {
   let buscarTitulo = document.getElementById("busqueda");
 
-  let elijoPeli = document.getElementById("movies");
-  let elijoSerie = document.getElementById("series");
-
-  elijoSerie.addEventListener("click", (e) => {
-    e.preventDefault();
-    buscarTitulo.value = "";
-    try {
-      tipoVideo = "series";
-
-      console.log("vamos por series");
-      generoFetch("series");
-    } catch (error) {
-      console.log(error);
-    }
-  });
-
-  elijoPeli.addEventListener("click", (e) => {
-    e.preventDefault();
-    buscarTitulo.value = "";
-    try {
-      tipoVideo = "movie";
-      generoFetch("movie");
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  
+       tipoVideo = "movie";
+      generoFetch(tipoVideo);
+ 
 
   buscarTitulo.addEventListener("input", async (e) => {
     const ingresoLetra = e.target.value;
