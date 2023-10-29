@@ -1,11 +1,11 @@
-@import "./variables.css";
-@import "./_recoveryPass.css";
+@import "./v_variables.css";
+@import "./v_recoveryPass.css";
 @import url("https://fonts.googleapis.com/css2?family=Asap:wght@100&family=Exo+2:wght@700&family=Rubik+Iso&family=Yanone+Kaffeesatz&display=swap");
 
-@import "./_general.css";
-@import "./_header.css";
-@import "./_main.css";
-@import "./_footer.css";
-@import "./_cards.css";
-@import "./_form.css";
-@import "./_infoVideos.css";
+@import "./v_general.css";
+@import "./v_header.css";
+@import "./v_main.css";
+@import "./v_footer.css";
+@import "./v_cards.css";
+@import "./v_form.css";
+@import "./v_infoVideos.css";
