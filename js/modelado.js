@@ -15,7 +15,7 @@ const CABECERA = `<div id="logoCia"></div>
   <ul class="menubar">
     <li><a href="" id="movies" value="movie" class="menu11">Peliculas</a></li>
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
-    <li><a href="" id="alquiler" value="alquilar">Alquilar Película</a></li>
+   
     <li><a href="../html/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
     <li><a href="../html/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
     <li><a href="../index.html">Salir</a></li>

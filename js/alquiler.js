@@ -86,7 +86,7 @@ function botonClickeado(button) {
         resumen.innerHTML = `<strong>Resumen:</strong>  ${data.Plot}`;
         anio.innerHTML = `<strong>Año: </strong>${data.Year}`;
         califIMDB.innerHTML = `<strong>IMDB: </strong>${data.Ratings[0].Value}`;
-        valorAlquiler.innerHTML = `<div id="precio-alquiler"><strong>Precio Alquiler: U$S ${precio.toFixed(
+        valorAlquiler.innerHTML = `<div id="precio-alquiler"><strong>Alquilar por: U$S ${precio.toFixed(
           2
         )}</strong></div>`;
      
