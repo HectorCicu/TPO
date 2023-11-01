@@ -3,7 +3,8 @@
 
 */
 let navbar1 = document.querySelector(".navBar");
-const CABECERA = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
+// <img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
+const CABECERA = `<div id="logoCia"></div>
 <h1>Portal de Videos</h1>
 <div class="container" id="suscr">
   <div  id="btns">
@@ -16,7 +17,7 @@ const CABECERA = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" 
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
     <li><a href="../html/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
     <li><a href="../html/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
-    <li><a href="index.html">Salir</a></li>
+    <li><a href="../index.html">Salir</a></li>
     
   </ul>
 </div>
@@ -30,7 +31,10 @@ const CABECERA = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" 
         
       </ul>
 </div>`;
+
 navbar1.innerHTML = CABECERA;
+
+//navbar1.innerHTML = CABECERA;
 
 /**
  * prepara el footer para no tener que copiarlo en cada página
@@ -48,31 +52,32 @@ let aside1 = document.querySelector("#aside1");
  * para mostrar u ocultar los distintos botones o accesos.
  */
 let menubar = document.querySelector(".menubar");
-let movies1=document.getElementById("movies")
-let series1 = document.getElementById("series")
-let alquilar1 = document.getElementById("alquilar")
-let infoVideo = document.getElementById("infoVideo")
+let movies1 = document.getElementById("movies");
+let series1 = document.getElementById("series");
+let alquilar1 = document.getElementById("alquilar");
+let infoVideo = document.getElementById("infoVideo");
 let botones = document.querySelector("#btns");
 let urlInfo = window.location.href;
-
+let imgLogo = document.getElementById("logoCia");
 // console.log(menubar);
-/** muestro o saco la barra de películas si estoy o no
- * en la página principal
- */
-console.log(urlInfo);
+
 if (urlInfo.includes("index.html")) {
+
+  imgLogo.innerHTML = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
   menubar.style.display = "none";
-}
-if (urlInfo.includes("infoVideos.html")) {
+} else if (urlInfo.includes("infoVideos.html")) {
+  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
   botones.style.display = "none";
- infoVideo.style.display = 'none';
-}
-if (urlInfo.includes("alquilarPeliculas.html")) {
+  infoVideo.style.display = "none";
+} else if (urlInfo.includes("alquilarPeliculas.html")) {
+  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
   botones.style.display = "none";
-  movies1.style.display = 'none';
-  series1.style.display = 'none';
-  alquilar1.style.display = 'none';
- 
+  movies1.style.display = "none";
+  series1.style.display = "none";
+  alquilar1.style.display = "none";
 }
 /** genero formulario de nuevo usuario */
 registro.addEventListener("click", () => {
