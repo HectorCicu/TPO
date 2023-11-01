@@ -19,7 +19,7 @@ function loginRegister_Ingresar() {
     }
     sessionStorage.setItem('usuario', usuario1)
     sessionStorage.setItem('password', password1)
-    window.location.href = "infoVideos.html"; //redirigir a la página de muestra de videos
+    window.location.href = "../../TPO/html/infoVideos.html"; //redirigir a la página de muestra de videos
   });
   btnForgotPass.addEventListener("click", (e) => {
     e.preventDefault();
