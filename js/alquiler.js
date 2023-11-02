@@ -60,7 +60,6 @@ function botonClickeado(button) {
     .then((response) => response.json())
     .then((data) => {
       if (!data.Error) {
-
         let posicBarraIMDB = data.Ratings[0].Value.indexOf("/");
         let calificacionIMDB = parseInt(
           data.Ratings[0].Value.substring(0, posicBarraIMDB)
@@ -75,10 +74,10 @@ function botonClickeado(button) {
           precio = 4.6;
         }
 
-        console.log(" precio " + precio);
-        console.log("posicion barra " + posicBarraIMDB);
-        console.log("valorAlquiler  " + valorAlquiler)
-
+        // console.log(" precio " + precio);
+        // console.log("posicion barra " + posicBarraIMDB);
+        // console.log("valorAlquiler  " + valorAlquiler)
+        let nombrePelicula = data.Title;
         h2InfoVideos.innerHTML = data.Title;
         imgVideo.innerHTML = ` <img src=${data.Poster} alt=${data.Title} id="poster">`;
         genero.innerHTML = `<strong>Género:</strong>  ${data.Genre}`;
@@ -89,16 +88,16 @@ function botonClickeado(button) {
         valorAlquiler.innerHTML = `<div id="precio-alquiler"><strong>Alquilar por: U$S ${precio.toFixed(
           2
         )}</strong></div>`;
-     
-     
-        botonAlquilar.innerHTML = `<button id="btn-alquilar">Alquilar</button>`;
+
+        localStorage.setItem("nombrePeli", nombrePelicula);
+        localStorage.setItem("precioAlquiler", precio);
+        botonAlquilar.innerHTML = `<button id="btn-alquilar" onclick= pagar()>Alquilar</button>`;
       } else {
         alert("No se ha podido encontrar el titulo");
       }
     });
 
   console.log("Botón presionado: " + button);
-  // Realiza cualquier otra acción necesaria
 }
 document.addEventListener("DOMContentLoaded", async () => {
   let buscarTitulo = document.getElementById("busqueda");
@@ -115,8 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
         );
         const resultado = await res.json();
-        // console.log(ingresoLetra);
-        // console.log(resultado);
+
         listar(resultado);
       }
     } catch (error) {
@@ -124,3 +122,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 });
+
+function pagar() {
+  window.location.href = "../../TPO/html/pagoAlquiler.html";
+}

@@ -63,7 +63,6 @@ let imgLogo = document.getElementById("logoCia");
 // console.log(menubar);
 
 if (urlInfo.includes("index.html")) {
-
   imgLogo.innerHTML = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
 
   menubar.style.display = "none";
@@ -79,6 +78,13 @@ if (urlInfo.includes("index.html")) {
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
+} else if (urlInfo.includes("pagoAlquiler.html")) {
+  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
+  botones.style.display = "none";
+  movies1.style.display = "none";
+  series1.style.display = "none";
+  
 }
 /** genero formulario de nuevo usuario */
 registro.addEventListener("click", () => {

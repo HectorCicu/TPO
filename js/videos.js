@@ -4,10 +4,7 @@ const listar = (result) => {
   let tabla = document.getElementById("tbody-table");
 
   for (let i = 0; i < result.Search.length; ++i) {
-    // console.log(result.Search[i].Title);
-    // console.log(result.Search[i].Year);
-    // console.log(result.Search[i].imdbID);
-    // console.log(result.Search[i].Type);
+
     let tr = document.createElement("tr");
     let td1 = document.createElement("td");
     td1.id = 'td-id'
