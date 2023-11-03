@@ -38,3 +38,6 @@ Se utilizan fuentes de Google Fonts.
 
 Pantalla Alquiler
 Es similar a infoVideos, salvo que se agregó precio para "alquilar" la película (solo películas y tipo streaming), y el precio es según la calificación de IMDB. Está dividido en 4 valores, si la calificación en menor a 4, menor a 7 o mayor que 7.
+
+Una vez seleccionado la película a alquilar, se dirige a la página de la carga del pago mediante tarjeta de crédito. Cuando se confirma la tarjeta, aparece una ventana emergente con el "link" a la película para ver pos streaming.
+
