@@ -1,0 +1,21 @@
+#pagoAprobado {
+    display:flex;
+    background: none;
+    background-color: rgb(3, 46, 3);
+    color: white;
+}
+
+#linkPeli{
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+}
+#linkP {
+    text-align: center;
+    color: yellowgreen;
+}
+
+
+#linkP:visited{
+    color: rgb(50, 112, 205);
+}

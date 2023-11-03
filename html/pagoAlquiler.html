@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TPO Grupo 18 - InfoVideos</title>
+    <title>TPO Grupo 18 - Pago Alquiler</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,28 +80,69 @@
               </button> -->
             </div>
             <div class="separator">
-              <hr class="line">
-              <p id="importeAPagar">Pago con Tarjeta de Crédito</p>
-              <hr class="line">
+              <hr class="line" />
+              <p id="importeAPagar"></p>
+              <hr class="line" />
             </div>
             <div class="credit-card-info--form">
               <div class="input_container">
-                <label for="password_field" class="input_label">Nombre y Apellido</label>
-                <input id="password_field" class="input_field" type="input" name="input-name" title="Inpit title" placeholder="Ingrese nombre Completo" required>
+                <label for="password_field" class="input_label"
+                  >Nombre y Apellido</label
+                >
+                <input
+                  id="password_field"
+                  class="input_field"
+                  type="input"
+                  name="input-name"
+                  title="Inpit title"
+                  placeholder="Ingrese nombre Completo"
+                  required
+                />
               </div>
               <div class="input_container">
-                <label for="password_field1" class="input_label">Número de Tarjeta</label>
-                <input id="password_field1" class="input_field" type="number" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000" required maxlength="16" minlength="16";>
+                <label for="password_field1" class="input_label"
+                  >Número de Tarjeta</label
+                >
+                <input
+                  id="password_field1"
+                  class="input_field"
+                  type="number"
+                  name="input-name"
+                  title="Inpit title"
+                  placeholder="0000 0000 0000 0000"
+                  required
+                  maxlength="16"
+                  minlength="16"
+                  ;
+                />
               </div>
               <div class="input_container">
-                <label for="password_field2" class="input_label">Fecha Vencimiento / CVV</label>
+                <label for="password_field2" class="input_label"
+                  >Fecha Vencimiento (MMAA) / CVV</label
+                >
                 <div class="split">
-                <input id="password_field2" class="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23" required>
-                <input id="password_field3" class="input_field" type="number" name="cvv" title="CVV" placeholder="CVV" required>
-              </div>
+                  <input
+                    id="password_field2"
+                    class="input_field"
+                    type="text"
+                    name="input-name"
+                    title="Expiry Date"
+                    placeholder="0123"
+                    required
+                  />
+                  <input
+                    id="password_field3"
+                    class="input_field"
+                    type="number"
+                    name="cvv"
+                    title="CVV"
+                    placeholder="CVV"
+                    required
+                  />
+                </div>
               </div>
             </div>
-              <button class="purchase--btn">Pagar</button>
+            <button class="purchase--btn">Pagar</button>
           </form>
         </div>
       </div>
@@ -228,7 +269,7 @@
             <div class="strip"></div>
             <div class="mstrip"></div>
             <div class="sstrip">
-              <p class="code">***</p>
+              <p class="code"></p>
             </div>
           </div>
         </div>
@@ -248,8 +289,6 @@
     ></script>
 
     <script src="../js/modelado.js"></script>
-  
-   
     <script src="../js/pagar.js"></script>
   </body>
 </html>

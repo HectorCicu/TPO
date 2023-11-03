@@ -3,7 +3,7 @@
     grid-template-columns: 50% 50%;
     justify-content: center;
     padding: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .modal1 {
@@ -100,9 +100,10 @@
   }
   
   .input_label {
-    font-size: 10px;
-    color: #8B8E98;
+    font-size: .9em;
+    color: #60646e;
     font-weight: 600;
+    font-style: italic;
   }
   
   .input_field {
@@ -121,7 +122,11 @@
     box-shadow: 0px 0px 0px 2px #242424;
     background-color: transparent;
   }
-  
+   #importeAPagar{
+    color: blue;
+    font-size: 1em;
+    font-style: italic;
+   }
   .purchase--btn {
     height: 45px;
     width: 150px;
@@ -229,7 +234,7 @@
   .strip {
     position: absolute;
     background-color: black;
-    width: 15em;
+    width: 20em;
     height: 1.5em;
     top: 2.4em;
     background: repeating-linear-gradient(
@@ -245,7 +250,7 @@
     position: absolute;
     background-color: rgb(255, 255, 255);
     width: 8em;
-    height: 0.8em;
+    height: 1.4em;
     top: 5em;
     left: .8em;
     border-radius: 2.5px;
@@ -254,8 +259,8 @@
   .sstrip {
     position: absolute;
     background-color: rgb(255, 255, 255);
-    width: 4.1em;
-    height: 0.8em;
+    width: 4.5em;
+    height: 1.4em;
     top: 5em;
     left: 10em;
     border-radius: 2.5px;
@@ -264,9 +269,11 @@
   .code {
     font-weight: bold;
     text-align: center;
-    margin: .2em;
+    margin: .1em;
     color: black;
   }
+  
+
   
   .flip-card-inner {
     position: relative;
