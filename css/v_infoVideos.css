@@ -89,8 +89,8 @@ th {
   flex-direction: column;
 
   margin-right: 10px;
-  /* overflow-y: scroll; */
-  /* max-height: 800px; */
+  overflow-y: scroll;
+  max-height: 450px;
 }
 #centroAside2 {
   display: flex;
@@ -101,7 +101,7 @@ th {
   border: none;
   max-width: 300px;
   max-height: 300px;
-  overflow: auto;
+  /* overflow: auto; */
   justify-content: center;
   align-content: center;
 
@@ -111,8 +111,10 @@ th {
   padding: 10px;
 }
 #poster {
-  object-fit: cover;
-}
+  object-fit: scale-down;
+  /* max-width: 090%;
+  max-height: 090%;*/
+} 
 
 #tablaAlquilar {
   background-color: #edc4b3;

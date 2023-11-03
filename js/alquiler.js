@@ -47,12 +47,14 @@ function botonClickeado(button) {
   let h2InfoVideos = document.getElementById("titpeli");
   let imgVideo = document.getElementById("imgPeli");
   let genero = document.getElementById("genre");
+  let pais = document.getElementById("pais");
   let elenco = document.getElementById("elenco");
   let resumen = document.getElementById("resumen");
   let anio = document.getElementById("anio");
   let califIMDB = document.getElementById("valueIMDB");
   let valorAlquiler = document.querySelector("#precio");
   let botonAlquilar = document.getElementById("botonAlquilar");
+  let director = document.getElementById("director");
 
   fetch(
     `https://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
@@ -60,18 +62,37 @@ function botonClickeado(button) {
     .then((response) => response.json())
     .then((data) => {
       if (!data.Error) {
+        /** busco la posición de la barra en la calificación de IMDB, para determinar el valor
+         * que se le asignará a cada video en alquiler. En la linea siguiente, extraigo el valor.
+         */
         let posicBarraIMDB = data.Ratings[0].Value.indexOf("/");
         let calificacionIMDB = parseInt(
           data.Ratings[0].Value.substring(0, posicBarraIMDB)
         );
-        console.log("calificacion imdb " + calificacionIMDB);
+        // console.log("calificacion imdb " + calificacionIMDB);
+        let anioPeli = parseInt(data.Year);
+        let coefAnio = 0;
+        /** Agrego un coeficiente por "edad" de la película para combinar con el alquiler */
+        if (anioPeli < 1978) {
+          coefAnio = 0.6;
+        } else if (anioPeli < 1990) {
+          coefAnio = 0.7;
+        } else if (anioPeli < 2005) {
+          coefAnio = 0.8;
+        } else if (anioPeli < 2018) {
+          coefAnio = 0.9;
+        } else {
+          coefAnio = 1;
+        }
+
+        /** precio según la calificación de IMDB */
         let precio = 0;
         if (calificacionIMDB < 4) {
-          precio = 3.2;
+          precio = 3.2 * coefAnio;
         } else if (calificacionIMDB < 7) {
-          precio = 4.0;
+          precio = 4.0 * coefAnio;
         } else {
-          precio = 4.6;
+          precio = 4.6 * coefAnio;
         }
 
         // console.log(" precio " + precio);
@@ -81,7 +102,9 @@ function botonClickeado(button) {
         h2InfoVideos.innerHTML = data.Title;
         imgVideo.innerHTML = ` <img src=${data.Poster} alt=${data.Title} id="poster">`;
         genero.innerHTML = `<strong>Género:</strong>  ${data.Genre}`;
+        pais.innerHTML = `<strong>País:</strong>  ${data.Country}`;
         elenco.innerHTML = `<strong>Elenco:</strong>  ${data.Actors}`;
+        director.innerHTML = `<strong>Director:</strong>  ${data.Director}`;
         resumen.innerHTML = `<strong>Resumen:</strong>  ${data.Plot}`;
         anio.innerHTML = `<strong>Año: </strong>${data.Year}`;
         califIMDB.innerHTML = `<strong>IMDB: </strong>${data.Ratings[0].Value}`;

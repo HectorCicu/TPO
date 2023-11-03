@@ -1,7 +1,6 @@
-/** modelo el navbar para no tener que repetirlo en cada página
- 
-
-*/
+/** 
+ * modelo el navbar y footer para no tener que repetirlo en cada página
+ */
 let navbar1 = document.querySelector(".navBar");
 // <img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
 const CABECERA = `<div id="logoCia"></div>
@@ -15,7 +14,6 @@ const CABECERA = `<div id="logoCia"></div>
   <ul class="menubar">
     <li><a href="" id="movies" value="movie" class="menu11">Peliculas</a></li>
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
-   
     <li><a href="../html/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
     <li><a href="../html/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
     <li><a href="../index.html">Salir</a></li>
@@ -23,14 +21,14 @@ const CABECERA = `<div id="logoCia"></div>
   </ul>
 </div>
 <div class="container" id="hamburguesa">
-<input type="checkbox" id="menu">
-<label for="menu" id="label-hamburguesa"> ☰ </label>
-<ul id="ul-hamburguesa">
-        <li id="li-hamburguesa"><a href="index.html">Inicio</a></li>
-        <li id="li-hamburguesa"><a href="">Quienes Somos</a></li>
-        <li id="li-hamburguesa"><a href="">...</a></li>
+  <input type="checkbox" id="menu">
+  <label for="menu" id="label-hamburguesa"> ☰ </label>
+  <ul id="ul-hamburguesa">
+    <li id="li-hamburguesa"><a href="index.html">Inicio</a></li>
+    <li id="li-hamburguesa"><a href="">Quienes Somos</a></li>
+    <li id="li-hamburguesa"><a href=""></a></li>
         
-      </ul>
+  </ul>
 </div>`;
 
 navbar1.innerHTML = CABECERA;
@@ -49,6 +47,8 @@ footer1.innerHTML = pieDePagina;
 let ingreso = document.querySelector("#login");
 let registro = document.querySelector("#signIn");
 let aside1 = document.querySelector("#aside1");
+
+
 /** En esta parte traigo el dato de la página en la que estoy
  * para mostrar u ocultar los distintos botones o accesos.
  */
@@ -60,24 +60,28 @@ let infoVideo = document.getElementById("infoVideo");
 let botones = document.querySelector("#btns");
 let urlInfo = window.location.href;
 let imgLogo = document.getElementById("logoCia");
-// console.log(menubar);
-
+/**
+ * En esta parte agrego la imagen del logo, ya que el index.html está en otra carpeta diferente
+ * a la del resto de las páginas. 
+ * Además también varío las opciones del navbar para acceder a otro sitio o consultar
+ * entre películas y series
+ */
 if (urlInfo.includes("index.html")) {
   imgLogo.innerHTML = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
-
   menubar.style.display = "none";
+
 } else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
-
   botones.style.display = "none";
   infoVideo.style.display = "none";
+
 } else if (urlInfo.includes("alquilarPeliculas.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
-
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
+
 } else if (urlInfo.includes("pagoAlquiler.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
 

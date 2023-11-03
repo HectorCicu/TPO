@@ -46,6 +46,8 @@ function botonClickeado(button) {
   let h2InfoVideos = document.getElementById("titpeli");
   let imgVideo = document.getElementById("imgPeli");
   let genero = document.getElementById("genre");
+  let pais = document.getElementById("pais");
+  let director = document.getElementById("director")
   let elenco = document.getElementById("elenco");
   let resumen = document.getElementById("resumen");
 
@@ -58,7 +60,9 @@ function botonClickeado(button) {
         h2InfoVideos.innerHTML = data.Title;
         imgVideo.innerHTML = ` <img src=${data.Poster} alt=${data.Title} id="poster">`;
         genero.innerHTML = `<strong>Género:</strong>  ${data.Genre}`;
+        pais.innerHTML = `<strong>País:</strong>  ${data.Country}`;
         elenco.innerHTML = `<strong>Elenco:</strong>  ${data.Actors}`;
+        director.innerHTML = `<strong>Director:</strong>  ${data.Director}`;
         resumen.innerHTML = `<strong>Resumen:</strong>  ${data.Plot}`;
         document.getElementById(
           "anio"
@@ -86,8 +90,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       tipoVideo = "series";
 
-      console.log("vamos por series");
-      generoFetch("series");
+      // console.log("vamos por series");
+      generoFetch(tipoVideo);
     } catch (error) {
       console.log(error);
     }
@@ -98,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     buscarTitulo.value = "";
     try {
       tipoVideo = "movie";
-      generoFetch("movie");
+      generoFetch(tipoVideo);
     } catch (error) {
       console.log(error);
     }
