@@ -1,6 +1,7 @@
 nav {
+  /* border: 1px solid brown; */
   display: grid;
-  grid-template-columns: 1fr 3fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr .5fr;
 
   background-color: var(--bg1-color);
   align-items: center;
@@ -9,6 +10,7 @@ nav {
 }
 
 nav h1 {
+  /* border: 1px solid brown; */
   display: flex;
   color: var(--primary-color);
   font-size: 2.5em;
@@ -17,6 +19,7 @@ nav h1 {
 }
 
 nav ul {
+  /* border: 1px solid brown; */
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -25,6 +28,7 @@ nav ul {
 }
 
 #btns {
+  /* border: 1px solid brown; */
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
@@ -32,12 +36,25 @@ nav ul {
 }
 #login,
 #signIn {
+  justify-content: center;
+  width: 33%;
   display: flex;
   border-radius: 6px;
   color: white;
   padding: 5px 10px;
   background-color: rgb(65, 65, 145);
   font-weight: bold;
+}
+#quienes {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 6px;
+  color: rgb(26, 24, 24);
+ 
+  background-color: rgb(192, 192, 216);
+  font-weight: bold;
+  font-size: .7em;
 }
 .menubar {
   /* display: none; */

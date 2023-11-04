@@ -4,11 +4,12 @@
 let navbar1 = document.querySelector(".navBar");
 // <img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
 const CABECERA = `<div id="logoCia"></div>
-<h1>Portal de Videos</h1>
+<h1 class="titulo-principal">Portal de Videos</h1>
 <div class="container" id="suscr">
   <div  id="btns">
     <button id="login">Ingresar</button>
     <button id="signIn">Registrarse</button>
+    <button id="quienes">Quienes Somos / Contacto</button>
     
     <!-- </div> -->
   </div>
@@ -47,6 +48,7 @@ let pieDePagina = `  <div>&copy ${ANIO} -  Héctor Hugo Cicutti  - TPO "Grupo 18
 footer1.innerHTML = pieDePagina;
 let ingreso = document.querySelector("#login");
 let registro = document.querySelector("#signIn");
+let quienes = document.querySelector("#quienes");
 let aside1 = document.querySelector("#aside1");
 
 /** En esta parte traigo el dato de la página en la que estoy
@@ -61,7 +63,7 @@ let quienesSomos = document.getElementById("quienesSomos");
 let botones = document.querySelector("#btns");
 let imgLogo = document.getElementById("logoCia");
 let menuHamb = document.getElementById("hamburguesa");
-let somos = document.getElementById("somos");
+
 /**
  * busco la página en la que estoy localizado, para
  * poder determinar cuáles atributos mostrar o no
@@ -78,7 +80,7 @@ if (urlInfo.includes("index.html")) {
   menubar.style.display = "none";
 
   menuHamb.style.display = "none";
-  somos.style.display
+
 } else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
@@ -158,5 +160,10 @@ ingreso.addEventListener("click", () => {
 </form>`;
   aside1.innerHTML = formulario;
   loginRegister_Ingresar();
-});
+},
+quienes.addEventListener('click' ,(e)=> {
+  e.preventDefault
+  window.location.href = '../tpo/html/quienesSomos.html'
+} ),
+)
 // });

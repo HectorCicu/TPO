@@ -1,5 +1,6 @@
+
 .quienesSomos {
-  display: grid;
+   display: grid;
   grid-template-columns: 1fr 1fr;
  /* border: 1px grey solid; */
   justify-items: center;
@@ -11,6 +12,7 @@
   animation-name: cambio-color-titulo;
   animation-duration: 5s;
   animation-timing-function: linear;
+  animation-delay: .5s;
 }
 #img-mail {
   width: 5%;
@@ -18,7 +20,7 @@
 }
 
 @keyframes cambio-color-titulo {
-  0% {
+  0%,100% {
     color: black;
     font-weight: bold;
   }
@@ -34,8 +36,5 @@
     color: brown;
     font-weight: 400;
   }
-  100% {
-    color: black;
-    font-weight: bold;
-  }
+ 
 }
