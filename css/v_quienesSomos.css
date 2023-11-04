@@ -1,0 +1,41 @@
+.quienesSomos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ /* border: 1px grey solid; */
+  justify-items: center;
+  text-align: center;
+}
+.tit-princ {
+  text-align: center;
+  animation: infinite;
+  animation-name: cambio-color-titulo;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+#img-mail {
+  width: 5%;
+  height: 5%;
+}
+
+@keyframes cambio-color-titulo {
+  0% {
+    color: black;
+    font-weight: bold;
+  }
+  25%{
+    color:green;
+    font-weight: 400;
+  }
+  50% {
+    color: blue;
+    font-weight:200;
+  }
+  75%{
+    color: brown;
+    font-weight: 400;
+  }
+  100% {
+    color: black;
+    font-weight: bold;
+  }
+}

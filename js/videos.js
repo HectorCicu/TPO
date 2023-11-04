@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   buscarTitulo.addEventListener("input", async (e) => {
+    e.preventDefault()
     const ingresoLetra = e.target.value;
 
     try {

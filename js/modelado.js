@@ -1,4 +1,4 @@
-/** 
+/**
  * modelo el navbar y footer para no tener que repetirlo en cada página
  */
 let navbar1 = document.querySelector(".navBar");
@@ -9,6 +9,7 @@ const CABECERA = `<div id="logoCia"></div>
   <div  id="btns">
     <button id="login">Ingresar</button>
     <button id="signIn">Registrarse</button>
+    
     <!-- </div> -->
   </div>
   <ul class="menubar">
@@ -24,9 +25,9 @@ const CABECERA = `<div id="logoCia"></div>
   <input type="checkbox" id="menu">
   <label for="menu" id="label-hamburguesa"> ☰ </label>
   <ul id="ul-hamburguesa">
-    <li id="li-hamburguesa"><a href="index.html">Inicio</a></li>
-    <li id="li-hamburguesa"><a href="">Quienes Somos</a></li>
-    <li id="li-hamburguesa"><a href=""></a></li>
+    <li id="li-hamburguesa"><a href="../index.html">Inicio</a></li>
+    <li id="li-hamburguesa"><a href="../html/quienesSomos.html">Quienes Somos</a></li>
+   
         
   </ul>
 </div>`;
@@ -48,7 +49,6 @@ let ingreso = document.querySelector("#login");
 let registro = document.querySelector("#signIn");
 let aside1 = document.querySelector("#aside1");
 
-
 /** En esta parte traigo el dato de la página en la que estoy
  * para mostrar u ocultar los distintos botones o accesos.
  */
@@ -57,12 +57,19 @@ let movies1 = document.getElementById("movies");
 let series1 = document.getElementById("series");
 let alquilar1 = document.getElementById("alquilar");
 let infoVideo = document.getElementById("infoVideo");
+let quienesSomos = document.getElementById("quienesSomos");
 let botones = document.querySelector("#btns");
-let urlInfo = window.location.href;
 let imgLogo = document.getElementById("logoCia");
+let menuHamb = document.getElementById("hamburguesa");
+let somos = document.getElementById("somos");
+/**
+ * busco la página en la que estoy localizado, para
+ * poder determinar cuáles atributos mostrar o no
+ */
+let urlInfo = window.location.href;
 /**
  * En esta parte agrego la imagen del logo, ya que el index.html está en otra carpeta diferente
- * a la del resto de las páginas. 
+ * a la del resto de las páginas.
  * Además también varío las opciones del navbar para acceder a otro sitio o consultar
  * entre películas y series
  */
@@ -70,25 +77,30 @@ if (urlInfo.includes("index.html")) {
   imgLogo.innerHTML = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
 
+  menuHamb.style.display = "none";
+  somos.style.display
 } else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   infoVideo.style.display = "none";
-
 } else if (urlInfo.includes("alquilarPeliculas.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
-
+} else if (urlInfo.includes("quienesSomos.html")) {
+  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+  botones.style.display = "none";
+  movies1.style.display = "none";
+  series1.style.display = "none";
+  //alquilar1.style.display = "none";
 } else if (urlInfo.includes("pagoAlquiler.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
 
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
-  
 }
 /** genero formulario de nuevo usuario */
 registro.addEventListener("click", () => {

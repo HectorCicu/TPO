@@ -71,17 +71,24 @@ function botonClickeado(button) {
         );
         // console.log("calificacion imdb " + calificacionIMDB);
         let anioPeli = parseInt(data.Year);
+        const ANIOACTUAL = new Date().getFullYear();
         let coefAnio = 0;
+        console.log(ANIOACTUAL - anioPeli);
         /** Agrego un coeficiente por "edad" de la película para combinar con el alquiler */
-        if (anioPeli < 1978) {
+        if (ANIOACTUAL - anioPeli >= 30) {
+          //console.log("entro por uno")
           coefAnio = 0.6;
-        } else if (anioPeli < 1990) {
+        } else if (ANIOACTUAL - anioPeli < 30 && ANIOACTUAL - anioPeli >= 20 ) {
+          //console.log("entro por dos")
           coefAnio = 0.7;
-        } else if (anioPeli < 2005) {
+        } else if (ANIOACTUAL - anioPeli < 20 && ANIOACTUAL - anioPeli >= 10 ) {
+          //console.log("entro por tres")
           coefAnio = 0.8;
-        } else if (anioPeli < 2018) {
+        } else if (ANIOACTUAL - anioPeli < 10 && ANIOACTUAL - anioPeli >= 5 ) {
+          //console.log("entro por cuatro")
           coefAnio = 0.9;
         } else {
+          //console.log("entro por cinco")
           coefAnio = 1;
         }
 
@@ -122,7 +129,8 @@ function botonClickeado(button) {
 
   console.log("Botón presionado: " + button);
 }
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async (e) => {
+  e.preventDefault;
   let buscarTitulo = document.getElementById("busqueda");
 
   tipoVideo = "movie";
