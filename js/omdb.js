@@ -1,22 +1,35 @@
+/**En este js recupero datos desde la API OMDB para incluir tanto en la página principal como carousel
+ * y también en la página infoVideos para mostrar los datos
+ */
+
 const carousel = document.querySelector("#carousel-examples");
 
 let omdbKey = "2677da8c";
-
 
 var armado = `<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner">`;
 var finArmado = "</div>";
 var armadoTotal = "";
 var html = "";
+
+// Genero un Random para mostrar una página distinta
 const pagina = Math.round(Math.random() * 20, 0);
-console.log(pagina);
+//console.log(pagina);
 var parametro = 0;
 var busqueda = "";
-var tipoVideo = "series";
+var tipoVideo = "";
+/**genero un número al azar, si es par, busco videos sino busco películas en la API
+ * para el carousel de index.html
+ */
+if (Math.round(Math.random() * 1000, 0) % 2 == 0) {
+  tipoVideo = "movie";
+} else {
+  tipoVideo = "series";
+}
+console.log(tipoVideo);
 
 ////  comienzo la carga de las películas //////
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-  
     generoFetch(tipoVideo);
   } catch (error) {
     console.error(error);
@@ -25,11 +38,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ///////////////////////////
 async function generoFetch(tipoV) {
+  //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
   parametro = Math.round(Math.random() * 1000, 0) % 5;
-  console.log(parametro);
-  switch (
-    parametro //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
-  ) {
+  //console.log(parametro);
+  switch (parametro) {
     case 1:
       busqueda = "the";
       break;
@@ -45,7 +57,7 @@ async function generoFetch(tipoV) {
     default:
       busqueda = "for";
   }
-  
+
   const response = await fetch(
     `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
   );
@@ -85,11 +97,7 @@ const armar1 = (result) => {
 };
 /**Genero una tabla con películas o series */
 
-
-
-
-
-/// limpio la tabla para cuando se realiza búsqueda 
+/// limpio la tabla para cuando se realiza búsqueda
 
 const limpiarTabla = () => {
   let tabla = document.getElementById("tbody-table");
@@ -99,8 +107,5 @@ const limpiarTabla = () => {
     tabla.removeChild(tabla.firstChild);
   }
 };
-
-
-
 
 /** Genero los eventos para ver si presiono ver películas o series */
