@@ -133,7 +133,10 @@ registro.addEventListener("click", () => {
         <textarea name="message" id="txt-registro">Solicitud de nuevo usuario - TPO - Grupo18 - Comisión #23526</textarea>
         </form>`;
   aside1.innerHTML = formularioIngreso;
+  
 });
+
+
 ingreso.addEventListener("click", () => {
   let formulario = `<form class="form">
   <p id="heading">Ingreso</p>

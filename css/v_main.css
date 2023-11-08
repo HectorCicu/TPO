@@ -19,3 +19,12 @@ img {
 aside {
   padding: 5px 10px 5px 10px;
 }
+
+
+  #peliculasMuestras {
+    margin-top: 1em;
+    
+    overflow: hidden; /* esto evita que el contenido se salga de la caja */
+   }
+ 
+
