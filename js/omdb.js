@@ -6,9 +6,14 @@ const carousel = document.querySelector("#carousel-examples");
 
 let omdbKey = "2677da8c";
 
+
+/**
+ * genero los atributos del principio y fin del carousel de posters de 
+ * películas a mostrar en index.html
+ */
 var armado = `<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner">`;
 var finArmado = "</div>";
-var armadoTotal = "";
+
 var html = "";
 
 // Genero un Random para mostrar una página distinta
@@ -17,6 +22,7 @@ const pagina = Math.round(Math.random() * 20, 0);
 var parametro = 0;
 var busqueda = "";
 var tipoVideo = "";
+
 /**genero un número al azar, si es par, busco videos sino busco películas en la API
  * para el carousel de index.html
  */
@@ -38,9 +44,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ///////////////////////////
 async function generoFetch(tipoV) {
+ 
   //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
+  
   parametro = Math.round(Math.random() * 1000, 0) % 5;
-  //console.log(parametro);
+
   switch (parametro) {
     case 1:
       busqueda = "the";
@@ -66,8 +74,8 @@ async function generoFetch(tipoV) {
   if (urlInfo.includes("index.html")) {
     armar1(result);
   } else if (urlInfo.includes("infoVideos.html")) {
-    console.log("result " + result);
-    listar(result);
+    //console.log("result " + result);
+    listar(result);  //esta función está en el archivo videos.js
   }
 }
 
@@ -87,7 +95,7 @@ const armar1 = (result) => {
     //  console.log(result.Search[i].Title);
     if (i == 0) {
       html +=
-        `<div class="carousel-item active">` + crearTarjeta(result.Search[i]);
+        `<div class="carousel-item active">` + crearTarjeta(result.Search[i]); //se genera la tarjeta con que comienza el carousel
     } else {
       html += `<div class="carousel-item">` + crearTarjeta(result.Search[i]);
     }
@@ -97,7 +105,7 @@ const armar1 = (result) => {
 };
 /**Genero una tabla con películas o series */
 
-/// limpio la tabla para cuando se realiza búsqueda
+/// limpio la tabla para cuando se realiza búsqueda en infoVideos.html
 
 const limpiarTabla = () => {
   let tabla = document.getElementById("tbody-table");
@@ -108,4 +116,4 @@ const limpiarTabla = () => {
   }
 };
 
-/** Genero los eventos para ver si presiono ver películas o series */
+
