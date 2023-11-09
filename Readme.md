@@ -3,7 +3,7 @@ Prueba de Trabajo Práctico Codo a Codo
 Información sobre películas y series - alquiler vía Streaming
 
 https://github.com/HectorCicu/TPO.git
-uso de Gooble Fonts
+uso de Google Fonts
 uso de https://uiverse.io/ para formulario de sign in  - registración
 
 Consumo de API OMDB
@@ -13,6 +13,8 @@ Pantalla inicial (Index.html),
 Carousel de poster de películas random (Bootstrap). Para eso utilizo números random así puedo importar películas por alguna palabra clave y en alguna página también determinada por números random.
 
 Por el hecho de que se repiten el header y footer, ambos están embebidos dentro del código js (modelado.js)
+
+Iframe de youtube, con trailer de Forrest Gump
 
 
 Ingreso y Registración 

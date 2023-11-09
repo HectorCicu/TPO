@@ -3,7 +3,6 @@
 
 } */
 body {
- 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -11,9 +10,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-image: url("../img/fondo001.webp");
-
   background-size: cover;
   background-repeat: no-repeat;
- 
-
 }

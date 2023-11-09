@@ -65,32 +65,27 @@ function botonClickeado(button) {
         /** busco la posición de la barra en la calificación de IMDB, para determinar el valor
          * que se le asignará a cada video en alquiler. En la linea siguiente, extraigo el valor.
          */
-        let posicBarraIMDB = data.Ratings[0].Value.indexOf("/"); 
+        let posicBarraIMDB = data.Ratings[0].Value.indexOf("/");
         let calificacionIMDB = parseInt(
           data.Ratings[0].Value.substring(0, posicBarraIMDB)
         );
 
         // console.log("calificacion imdb " + calificacionIMDB);
-        
+
         let anioPeli = parseInt(data.Year);
         const ANIOACTUAL = new Date().getFullYear(); // recupero el año actual para calcular coef. pago
         let coefAnio = 0;
         console.log(ANIOACTUAL - anioPeli);
         /** Agrego un coeficiente por "edad" de la película para combinar con el alquiler */
         if (ANIOACTUAL - anioPeli >= 30) {
-       
           coefAnio = 0.6;
-        } else if (ANIOACTUAL - anioPeli < 30 && ANIOACTUAL - anioPeli >= 20 ) {
-      
+        } else if (ANIOACTUAL - anioPeli < 30 && ANIOACTUAL - anioPeli >= 20) {
           coefAnio = 0.7;
-        } else if (ANIOACTUAL - anioPeli < 20 && ANIOACTUAL - anioPeli >= 10 ) {
-         
+        } else if (ANIOACTUAL - anioPeli < 20 && ANIOACTUAL - anioPeli >= 10) {
           coefAnio = 0.8;
-        } else if (ANIOACTUAL - anioPeli < 10 && ANIOACTUAL - anioPeli >= 5 ) {
-        
+        } else if (ANIOACTUAL - anioPeli < 10 && ANIOACTUAL - anioPeli >= 5) {
           coefAnio = 0.9;
         } else {
-     
           coefAnio = 1;
         }
 
@@ -103,7 +98,6 @@ function botonClickeado(button) {
         } else {
           precio = 4.6 * coefAnio;
         }
-
 
         let nombrePelicula = data.Title;
         h2InfoVideos.innerHTML = data.Title;
