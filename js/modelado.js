@@ -173,7 +173,7 @@ ingreso.addEventListener("click", () => {
 },
 quienes.addEventListener('click' ,(e)=> {
   e.preventDefault
-  window.location.href = '../tpo/html/quienesSomos.html'
+  window.location.href = '/tpo/html/quienesSomos.html'
 } ),
 )
 // });
