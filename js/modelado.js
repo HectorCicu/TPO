@@ -75,29 +75,36 @@ let urlInfo = window.location.href;
  * Además también varío las opciones del navbar para acceder a otro sitio o consultar
  * entre películas y series
  */
-if (urlInfo.includes("index.html")) {
+
+
+//if (urlInfo.includes("index.html")) {
+  if (document.title == "TPO Grupo 18 - Index"){
   imgLogo.innerHTML = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
 
   menuHamb.style.display = "none";
 
-} else if (urlInfo.includes("infoVideos.html")) {
+} else if (document.title=="TPO Grupo 18 - InfoVideos") {
+//else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   infoVideo.style.display = "none";
-} else if (urlInfo.includes("alquilarPeliculas.html")) {
+} else if (document.title=="TPO Grupo 18 - Alquilar Peliculas") {
+//else if (urlInfo.includes("alquilarPeliculas.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
-} else if (urlInfo.includes("quienesSomos.html")) {
+}  else if (document.title=="TPO Grupo 18 - Quienes Somos") {
+//else if (urlInfo.includes("quienesSomos.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   //alquilar1.style.display = "none";
-} else if (urlInfo.includes("pagoAlquiler.html")) {
+} else if (document.title=="TPO Grupo 18 - Pago Alquiler") {
+//else if (urlInfo.includes("pagoAlquiler.html")) {
   imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
 
   botones.style.display = "none";
