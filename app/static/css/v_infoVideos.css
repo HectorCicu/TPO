@@ -50,6 +50,7 @@
 table {
   padding-top: 5px;
   max-width: 800px;
+  width: 100%;
 }
 
 th {
@@ -87,13 +88,13 @@ th {
 #aside2 {
   display: flex;
   flex-direction: column;
-
   margin-right: 10px;
   overflow-y: scroll;
   max-height: 450px;
 }
 #centroAside2 {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 #imgPeli {
@@ -101,7 +102,6 @@ th {
   border: none;
   max-width: 300px;
   max-height: 300px;
-  /* overflow: auto; */
   justify-content: center;
   align-content: center;
 
@@ -119,6 +119,7 @@ th {
 #tablaAlquilar {
   background-color: #edc4b3;
   color: #774936;
+  max-width: 100%;
 }
 
 #precio-alquiler {

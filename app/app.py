@@ -150,13 +150,21 @@ def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
 
         sql2 = f"INSERT INTO `tpog18`.`alqulervideos`(`username`,`imdbID`,`precio`,`fechaAlquiler`) VALUES ('{username}','{imdbID}',{precio},'{fecha_alquiler}');"
         cursor.execute(sql2)
-
-        sql3=f"INSERT INTO `tpog18`.`videos`(`titulo`,`imdb_ID`,`genero`,`anio`) VALUES ('{titulo}','{imdbID}','{genero}',{anio});"
-        cursor.execute(sql3)
+        
+        #busco si existe ese video en la tabla videos. Si existe no realizo acción, sino guardo el dato.
+        sql0 = f"SELECT imdb_ID from tpog18.videos WHERE imdb_ID = '{imdbID}'"
+        cursor.execute(sql0)
+        existeVideo = cursor.fetchone()
+        if existeVideo :
+            pass
+        else:
+            sql3 = f"INSERT INTO `tpog18`.`videos`(`titulo`,`imdb_ID`,`genero`,`anio`) VALUES ('{titulo}','{imdbID}','{genero}',{anio});"
+            cursor.execute(sql3)
         conexion.commit()
 
         cursor.close()
         conexion.close()
+        return jsonify({"mensaje": "Operacion exitosa"}), 200
     except Exception as e:
         return jsonify({"mensaje": "Error en la base de datos: " + str(e)}), 500
 

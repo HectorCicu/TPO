@@ -62,8 +62,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
         window.alert("Faltan datos de la Tarjeta - Verficar");
       } else {
         console.log("pagaste!");
-        let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+        const params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 width=600,height=300,left=100,top=100`;
+        
         let titulo, precio, imdbID, genero, anio, username;
         let data = {
           titulo: localStorage.getItem("titulo"),
@@ -79,7 +80,7 @@ width=600,height=300,left=100,top=100`;
           (genero = localStorage.getItem("genero")),
           (anio = localStorage.getItem("anio")),
           (username = localStorage.getItem("username")),
-          await fetch(
+          fetch(
             "/compraPeliculas/" +
               titulo +
               "/" +
@@ -102,11 +103,11 @@ width=600,height=300,left=100,top=100`;
           )
             .then((response) => response.json())
             .then((data) => {
-              // Manejar la respuesta de la solicitud
+              alert("acá llegué")
+              window.open("/ventanaPago", "test", params);// Manejar la respuesta de la solicitud
               console.log(data);
+              window.location.href = "/alquilarPeliculas";
             });
-
-        window.open("/ventanaPago", "test", params);
       }
     } catch (err) {
       console.log(err);
