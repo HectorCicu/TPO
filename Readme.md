@@ -11,12 +11,16 @@ Repositorio: https://github.com/HectorCicu/TPO.git
 
 - Consumo de API OMDB
 
-- Al ser el footer similar en todas las páginas, se utilizó la manipulación del DOM para incrustarlo en cada uno de ellos, de forma de no tener que repetirlo, y si necesita modificarse se realice en un solo lugar.
+- Frontend con HTML - CSS - Javascript - Bootstrap
+- Backend en Pythoyn con Flask
+- Base de datos MySQL
+
+- Se generó una estructura de carpetas recomendadas en algunos videos de flask, donde los archivos html se encuentran dentro de la carpeta 'template', ya que por defecto flask los busca ahí. Los archivos javascript, css y de imágenes se encuentran dentro de la carpeta 'static'
+
+- Al ser el footer similar en todas las páginas, se utilizó la manipulación del DOM para incrustarlo en cada uno de ellos, de forma de no tener que repetirlo, y si necesita modificarse se realice en un solo lugar  (Se encuentra dentro del archivo modelado.js)..
 
 - Como el header es casi similar en todas las páginas, se utilizó mediante JavaScript la manipulación del DOM a fin de crear un solo modelo. 
-Al ser variable parte de la cabecera (muestra diferente botones o enlaces según la página) se resolvió condicionando segun la URL en la que estaba el programa para determinar cuáles atributos mostrar u ocultar.
-
-- Se resolvió dejar solamente el index.html en la carpeta principal y alojar todas las otras páginas en una carpeta especial. Esto hizo que haya que manipular el DOM desde JS para poder mostrar el favicon y el logo de acuerdo a la página de referencia.
+Al ser variable parte de la cabecera (muestra diferente botones o enlaces según la página) se resolvió condicionando segun el nombre de la página en la que estaba el programa para determinar cuáles atributos mostrar u ocultar.
 
 - Se utilizaron fuentes de Google Fonts, guardándolas como variables para utilizarlas en diferentes páginas.
 
@@ -32,11 +36,13 @@ Al ser variable parte de la cabecera (muestra diferente botones o enlaces según
 
 
 "__"Ingreso y Registración "__"
-    Para ingresar hay que logguearse con usuario (usuario001) y contraseña (p1234).
+    Para ingresar hay que logguearse con usuario y contraseña. El programa valida que exista.
 
     El botón "olvidó contraseña" envía a mi casilla de correos la solicitud de reestablecimiento.
 
-    También se encuentra el formulario de registración, el cual envía solicitud de registro por mail.
+    También se encuentra el formulario de registración. El mismo controla que el usuario a cargar no exista.
+    Si el usuario existe, muestra un mensaje de error. 
+    Si no existe, lo graba en la tabla Clientes
 
     Ambos mails se generan con FormsPree
 
