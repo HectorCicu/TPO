@@ -1,6 +1,10 @@
 /**
  * modelo el navbar y footer para no tener que repetirlo en cada página
  */
+function alquilarPeliculas() {
+  window.location.href = "/alqularPeliculas"
+}
+
 let navbar1 = document.querySelector(".navBar");
 // <img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
 const CABECERA = `<div id="logoCia"></div>
@@ -16,9 +20,9 @@ const CABECERA = `<div id="logoCia"></div>
   <ul class="menubar">
     <li><a href="" id="movies" value="movie" class="menu11">Peliculas</a></li>
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
-    <li><a href="../html/alquilarPeliculas.html" id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
-    <li><a href="../html/infoVideos.html" id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
-    <li><a href="../index.html">Salir</a></li>
+    <li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+    <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
+    <li><a href='/'>Salir</a></li>
     
   </ul>
 </div>
@@ -26,8 +30,8 @@ const CABECERA = `<div id="logoCia"></div>
   <input type="checkbox" id="menu">
   <label for="menu" id="label-hamburguesa"> ☰ </label>
   <ul id="ul-hamburguesa">
-    <li id="li-hamburguesa"><a href="../index.html">Inicio</a></li>
-    <li id="li-hamburguesa"><a href="../html/quienesSomos.html">Quienes Somos</a></li>
+    <li id="li-hamburguesa"><a href='/'}}>Inicio</a></li>
+    <li id="li-hamburguesa"><a href='/quienesSomos'>Quienes Somos</a></li>
    
         
   </ul>
@@ -68,7 +72,7 @@ let menuHamb = document.getElementById("hamburguesa");
  * busco la página en la que estoy localizado, para
  * poder determinar cuáles atributos mostrar o no
  */
-let urlInfo = window.location.href;
+//let urlInfo = window.location.href;
 /**
  * En esta parte agrego la imagen del logo, ya que el index.html está en otra carpeta diferente
  * a la del resto de las páginas.
@@ -79,33 +83,33 @@ let urlInfo = window.location.href;
 
 //if (urlInfo.includes("index.html")) {
   if (document.title == "TPO Grupo 18 - Index"){
-  imgLogo.innerHTML = `<img src="./img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
 
   menuHamb.style.display = "none";
 
 } else if (document.title=="TPO Grupo 18 - InfoVideos") {
 //else if (urlInfo.includes("infoVideos.html")) {
-  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   infoVideo.style.display = "none";
 } else if (document.title=="TPO Grupo 18 - Alquilar Peliculas") {
-//else if (urlInfo.includes("alquilarPeliculas.html")) {
-  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
+  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
 }  else if (document.title=="TPO Grupo 18 - Quienes Somos") {
-//else if (urlInfo.includes("quienesSomos.html")) {
-  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
+  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
-  //alquilar1.style.display = "none";
+
 } else if (document.title=="TPO Grupo 18 - Pago Alquiler") {
-//else if (urlInfo.includes("pagoAlquiler.html")) {
-  imgLogo.innerHTML = `<img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />`;
+
+  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
 
   botones.style.display = "none";
   movies1.style.display = "none";
@@ -118,7 +122,7 @@ registro.addEventListener("click", () => {
       <p id="heading">Nuevo Usuario</p> 
       <div class="field">   
        
-        <input autocomplete="off" placeholder="Nombre usuario"  class="input-field" type="text"/>  
+        <input autocomplete="off" placeholder="Nombre usuario"  class="input-field" type="text" name="nombreUsuario"/>  
       </div>  
       <div class="field">    
       <svg class="input-icon"  xmlns="http://www.w3.org/2000/svg"      width="14"      height="14"      fill="currentColor"      viewBox="0 0 16 16"    >
@@ -131,15 +135,17 @@ registro.addEventListener("click", () => {
             <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z">
             </path>
           </svg>
-          <input placeholder="Contraseña" class="input-field" type="password" />
+          <input placeholder="Contraseña" class="input-field" type="password" name="passw"/>
         </div>  
         <div class="btn">
-          <button class="button1" id="buttonR" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registrarse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="button1" id="buttonR" type="submit" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registrarse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </button>
         </div>
         <textarea name="message" id="txt-registro">Solicitud de nuevo usuario - TPO - Grupo18 - Comisión #23526</textarea>
         </form>`;
   aside1.innerHTML = formularioIngreso;
+  
+  nuevoUsuario()
   
 });
 
@@ -173,7 +179,7 @@ ingreso.addEventListener("click", () => {
 },
 quienes.addEventListener('click' ,(e)=> {
   e.preventDefault
-  window.location.href = '/tpo/html/quienesSomos.html'
+  window.location.href = '/quienesSomos'
 } ),
 )
 // });

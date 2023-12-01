@@ -17,8 +17,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+
   </head>
   <body>
     <header>
@@ -35,14 +36,14 @@
         <p id="nombre1">...</p>
         <br>
         <p id="email">
-          <img src="../img/mensaje.gif" alt="mail" id="img-mail" /><strong
+          <img src="{{url_for('static', filename='img/mensaje.gif')}}" alt="mail" id="img-mail" /><strong
             > hector.cicutti@gmail.com</strong
           >
           
         </p>
         <p id="github">
           
-          <a href=" https://github.com/HectorCicu/"><img src="../img/github_original_wordmark_logo_icon_146506.ico" alt="github" id="img-mail" /><strong
+          <a href=" https://github.com/HectorCicu/"><img src="{{url_for('static', filename='img/github_original_wordmark_logo_icon_146506.ico')}}" alt="github" id="img-mail" /><strong
             > https://github.com/HectorCicu/</strong
             
           ></a>
@@ -71,6 +72,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../js/modelado.js"></script>
+    <script src="{{url_for('static', filename='js/modelado.js')}}"></script>
   </body>
 </html>

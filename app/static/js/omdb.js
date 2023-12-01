@@ -6,9 +6,8 @@ const carousel = document.querySelector("#carousel-examples");
 
 let omdbKey = "2677da8c";
 
-
 /**
- * genero los atributos del principio y fin del carousel de posters de 
+ * genero los atributos del principio y fin del carousel de posters de
  * películas a mostrar en index.html
  */
 var armado = `<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner">`;
@@ -34,6 +33,9 @@ if (Math.round(Math.random() * 1000, 0) % 2 == 0) {
 console.log(tipoVideo);
 
 ////  comienzo la carga de las películas //////
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     generoFetch(tipoVideo);
@@ -44,9 +46,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ///////////////////////////
 async function generoFetch(tipoV) {
- 
+  //console.log("entre en generofetch")
+
   //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
-  
+
   parametro = Math.round(Math.random() * 1000, 0) % 5;
 
   switch (parametro) {
@@ -70,10 +73,11 @@ async function generoFetch(tipoV) {
     `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
   );
   const result = await response.json();
-
-  if (urlInfo.includes("index.html")) {
+ console.log(document.title)
+  if (document.title == "TPO Grupo 18 - Index") {
+    console.log("entro por armar1")
     armar1(result);
-  } else if (urlInfo.includes("infoVideos.html")) {
+  } else if (document.title == "TPO Grupo 18 - InfoVideos") {
     //console.log("result " + result);
     listar(result);  //esta función está en el archivo videos.js
   }
@@ -115,5 +119,3 @@ const limpiarTabla = () => {
     tabla.removeChild(tabla.firstChild);
   }
 };
-
-

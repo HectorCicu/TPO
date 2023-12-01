@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   console.log("date");
   let nombrePeli = localStorage.getItem("nombrePeli");
   let precio = localStorage.getItem("precioAlquiler");
+  let imdbID = localStorage.getItem("imdbID");
   let nroFormateado = "";
   let validez = "";
   let codCVV;
@@ -42,10 +43,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
         validDate.innerHTML = validez;
       }
       if (e.target.id == "password_field3") {
-        codCVV = ingresoDato
+        codCVV = ingresoDato;
         cvv.innerHTML = ingresoDato;
-        console.log("CVV---   " ,cvv, " " , codCVV)
-          
+        console.log("CVV---   ", cvv, " ", codCVV);
       }
     } catch (er) {
       console.log(er);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   /**
    * Agrego las funcionalidades del botón de pago
    */
-  botonPago.addEventListener("click", (eve) => {
+  botonPago.addEventListener("click", async (eve) => {
     eve.preventDefault();
     try {
       if (!nombreCC || !nroFormateado || !validez || !codCVV) {
@@ -64,9 +64,49 @@ document.addEventListener("DOMContentLoaded", (e) => {
         console.log("pagaste!");
         let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 width=600,height=300,left=100,top=100`;
+        let titulo, precio, imdbID, genero, anio, username;
+        let data = {
+          titulo: localStorage.getItem("titulo"),
+          precio: localStorage.getItem("precioAlquiler"),
+          imdbID: localStorage.getItem("imdbID"),
+          genero: localStorage.getItem("genero"),
+          anio: localStorage.getItem("anio"),
+          username: localStorage.getItem("username"),
+        };
+        (titulo = localStorage.getItem("titulo")),
+          (precio = localStorage.getItem("precioAlquiler")),
+          (imdbID = localStorage.getItem("imdbID")),
+          (genero = localStorage.getItem("genero")),
+          (anio = localStorage.getItem("anio")),
+          (username = localStorage.getItem("username")),
+          await fetch(
+            "/compraPeliculas/" +
+              titulo +
+              "/" +
+              precio +
+              "/" +
+              imdbID +
+              "/" +
+              genero +
+              "/" +
+              anio +
+              "/" +
+              username,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            }
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              // Manejar la respuesta de la solicitud
+              console.log(data);
+            });
 
-        window.open("../html/ventanaPago.html", "test", params);
-     
+        window.open("/ventanaPago", "test", params);
       }
     } catch (err) {
       console.log(err);

@@ -115,6 +115,10 @@ function botonClickeado(button) {
 
         localStorage.setItem("nombrePeli", nombrePelicula);
         localStorage.setItem("precioAlquiler", precio);
+        localStorage.setItem("imdbID", data.imdbID);
+        localStorage.setItem("titulo",data.Title);
+        localStorage.setItem("genero",data.Genre);
+        localStorage.setItem("anio",data.Year);
         botonAlquilar.innerHTML = `<button id="btn-alquilar" onclick= pagar()>Alquilar</button>`;
       } else {
         alert("No se ha podido encontrar el titulo");
@@ -149,5 +153,5 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 });
 
 function pagar() {
-  window.location.href = "../../TPO/html/pagoAlquiler.html";
+  window.location.href = "/pagoAlquiler";
 }
