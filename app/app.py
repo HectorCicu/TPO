@@ -47,9 +47,19 @@ def quienesSomos():
     return render_template('quienesSomos.html')
 
 
+@app.route('/listaPeliculas')
+def listaPeliculas():
+    return render_template('listaPeliculas.html')
+
+
 @app.route('/ventanaPago')
 def ventanaPago():
     return render_template('ventanaPago.html')
+
+
+@app.route('/N/A')
+def not_available():
+    return 'This page is not available.'
 
 
 @app.route('/validar_cliente', methods=['GET'])
@@ -150,12 +160,12 @@ def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
 
         sql2 = f"INSERT INTO `tpog18`.`alqulervideos`(`username`,`imdbID`,`precio`,`fechaAlquiler`) VALUES ('{username}','{imdbID}',{precio},'{fecha_alquiler}');"
         cursor.execute(sql2)
-        
-        #busco si existe ese video en la tabla videos. Si existe no realizo acción, sino guardo el dato.
+
+        # busco si existe ese video en la tabla videos. Si existe no realizo acción, sino guardo el dato.
         sql0 = f"SELECT imdb_ID from tpog18.videos WHERE imdb_ID = '{imdbID}'"
         cursor.execute(sql0)
         existeVideo = cursor.fetchone()
-        if existeVideo :
+        if existeVideo:
             pass
         else:
             sql3 = f"INSERT INTO `tpog18`.`videos`(`titulo`,`imdb_ID`,`genero`,`anio`) VALUES ('{titulo}','{imdbID}','{genero}',{anio});"
@@ -167,6 +177,32 @@ def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
         return jsonify({"mensaje": "Operacion exitosa"}), 200
     except Exception as e:
         return jsonify({"mensaje": "Error en la base de datos: " + str(e)}), 500
+
+
+@app.route("/listadoPeliculas/<string:user>", methods=["GET"])
+def listadoPeliculas(user):
+    try:
+        conexion = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="root",
+            database="tpog18"
+        )
+        if conexion.is_connected():
+            print("Conexión exitosa a la base de datos")
+        else:
+            print("No hay conexión a la base de datos")
+
+        cursor = conexion.cursor()
+        sql5 = f"SELECT fechaAlquiler, titulo, anio, genero, precio FROM tpog18.alqulervideos LEFT JOIN tpog18.videos ON alqulervideos.imdbID = videos.imdb_ID WHERE username = '{user}' ORDER BY fechaAlquiler desc;"
+        cursor.execute(sql5)
+        data = cursor.fetchall()
+        conexion.commit()
+
+        cursor.close()
+        return jsonify(data)
+    except:
+        return jsonify({"error": "no se ha podido obtener los datos del usuario"}), 400
 
 
 if __name__ == '__main__':

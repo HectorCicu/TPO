@@ -2,13 +2,14 @@
  * modelo el navbar y footer para no tener que repetirlo en cada página
  */
 function alquilarPeliculas() {
-  window.location.href = "/alqularPeliculas"
+  window.location.href = "/alqularPeliculas";
 }
 
 let navbar1 = document.querySelector(".navBar");
 // <img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
-const CABECERA = `<div id="logoCia"></div>
+const CABECERA = `<div id="logoCia"></div><div id="titulo">
 <h1 class="titulo-principal">Portal de Videos</h1>
+<div id="cliente"></div></div>
 <div class="container" id="suscr">
   <div  id="btns">
     <button id="login">Ingresar</button>
@@ -80,40 +81,40 @@ let menuHamb = document.getElementById("hamburguesa");
  * entre películas y series
  */
 
-
 //if (urlInfo.includes("index.html")) {
-  if (document.title == "TPO Grupo 18 - Index"){
+if (document.title == "TPO Grupo 18 - Index") {
+  localStorage.removeItem("username")
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
 
   menuHamb.style.display = "none";
-
-} else if (document.title=="TPO Grupo 18 - InfoVideos") {
-//else if (urlInfo.includes("infoVideos.html")) {
+} else if (document.title == "TPO Grupo 18 - InfoVideos") {
+  //else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   infoVideo.style.display = "none";
-} else if (document.title=="TPO Grupo 18 - Alquilar Peliculas") {
-
+} else if (document.title == "TPO Grupo 18 - Alquilar Peliculas") {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
-}  else if (document.title=="TPO Grupo 18 - Quienes Somos") {
-
+} else if (document.title == "TPO Grupo 18 - Quienes Somos") {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
-
-} else if (document.title=="TPO Grupo 18 - Pago Alquiler") {
-
+} else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
 
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
+} else if (document.title == "TPO Grupo 18 - ListaVideos") {
+  //else if (urlInfo.includes("infoVideos.html")) {
+  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  botones.style.display = "none";
+  infoVideo.style.display = "none";
 }
 /** genero formulario de nuevo usuario */
 registro.addEventListener("click", () => {
@@ -144,14 +145,14 @@ registro.addEventListener("click", () => {
         <textarea name="message" id="txt-registro">Solicitud de nuevo usuario - TPO - Grupo18 - Comisión #23526</textarea>
         </form>`;
   aside1.innerHTML = formularioIngreso;
-  
-  nuevoUsuario()
-  
+
+  nuevoUsuario();
 });
 
-
-ingreso.addEventListener("click", () => {
-  let formulario = `<form class="form">
+ingreso.addEventListener(
+  "click",
+  () => {
+    let formulario = `<form class="form">
   <p id="heading">Ingreso</p>
      <div class="field">
        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 14 14">
@@ -174,12 +175,12 @@ ingreso.addEventListener("click", () => {
         </button>
       </div>
 </form>`;
-  aside1.innerHTML = formulario;
-  loginRegister_Ingresar();
-},
-quienes.addEventListener('click' ,(e)=> {
-  e.preventDefault
-  window.location.href = '/quienesSomos'
-} ),
-)
+    aside1.innerHTML = formulario;
+    loginRegister_Ingresar();
+  },
+  quienes.addEventListener("click", (e) => {
+    e.preventDefault;
+    window.location.href = "/quienesSomos";
+  })
+);
 // });

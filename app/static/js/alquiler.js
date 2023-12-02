@@ -1,4 +1,11 @@
 /** este js es para alquilar películas  */
+console.log(localStorage.getItem("username") + "   --username de alquiler")
+if(!localStorage.getItem("username")){
+  window.location.href = "/"
+}
+let cliente = document.querySelector("#cliente");
+let clien = localStorage.getItem("username");
+cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${clien}</h3>`;
 
 /** OJO!! falta hacer el botón de compra! */
 const listar = (result) => {
@@ -55,6 +62,7 @@ function botonClickeado(button) {
   let valorAlquiler = document.querySelector("#precio");
   let botonAlquilar = document.getElementById("botonAlquilar");
   let director = document.getElementById("director");
+
 
   fetch(
     `https://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
@@ -116,9 +124,9 @@ function botonClickeado(button) {
         localStorage.setItem("nombrePeli", nombrePelicula);
         localStorage.setItem("precioAlquiler", precio);
         localStorage.setItem("imdbID", data.imdbID);
-        localStorage.setItem("titulo",data.Title);
-        localStorage.setItem("genero",data.Genre);
-        localStorage.setItem("anio",data.Year);
+        localStorage.setItem("titulo", data.Title);
+        localStorage.setItem("genero", data.Genre);
+        localStorage.setItem("anio", data.Year);
         botonAlquilar.innerHTML = `<button id="btn-alquilar" onclick= pagar()>Alquilar</button>`;
       } else {
         alert("No se ha podido encontrar el titulo");

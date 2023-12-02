@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
   let validDate = document.getElementById("validDate");
   let cvv = document.querySelector(".code");
   let botonPago = document.querySelector(".purchase--btn");
+  let cliente = document.querySelector("#cliente");
+
+  let clien = localStorage.getItem("username");
+  cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${clien}</h3>`;
+
   importeAPagar.innerHTML = `${nombrePeli}  - U$S ${parseFloat(precio).toFixed(
     2
   )}`;
@@ -64,7 +69,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         console.log("pagaste!");
         const params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 width=600,height=300,left=100,top=100`;
-        
+
         let titulo, precio, imdbID, genero, anio, username;
         let data = {
           titulo: localStorage.getItem("titulo"),
@@ -103,8 +108,8 @@ width=600,height=300,left=100,top=100`;
           )
             .then((response) => response.json())
             .then((data) => {
-              alert("acá llegué")
-              window.open("/ventanaPago", "test", params);// Manejar la respuesta de la solicitud
+              
+              window.open("/ventanaPago", "test", params); // Manejar la respuesta de la solicitud
               console.log(data);
               window.location.href = "/alquilarPeliculas";
             });

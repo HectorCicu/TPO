@@ -105,7 +105,33 @@ a {
 .suscr {
   display: flex;
 }
-
+#titulo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+#cliente {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+#cliente1 {
+  display: flex;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2em;
+  color: blue;
+  font-weight: bold;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
 #aside-contenidoInicial {
   text-align: center;
 
