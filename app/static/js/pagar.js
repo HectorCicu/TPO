@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
   let validDate = document.getElementById("validDate");
   let cvv = document.querySelector(".code");
   let botonPago = document.querySelector(".purchase--btn");
+  
+  //Agrego nombre de usuario al header
   let cliente = document.querySelector("#cliente");
-
   let clien = localStorage.getItem("username");
   cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${clien}</h3>`;
 

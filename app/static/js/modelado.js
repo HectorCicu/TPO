@@ -31,7 +31,7 @@ const CABECERA = `<div id="logoCia"></div><div id="titulo">
   <input type="checkbox" id="menu">
   <label for="menu" id="label-hamburguesa"> ☰ </label>
   <ul id="ul-hamburguesa">
-    <li id="li-hamburguesa"><a href='/'}}>Inicio</a></li>
+    <li id="li-hamburguesa"><a href='/listaPeliculas'}}>Películas Alquiladas</a></li>
     <li id="li-hamburguesa"><a href='/quienesSomos'>Quienes Somos</a></li>
    
         

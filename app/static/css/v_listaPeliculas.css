@@ -1,0 +1,21 @@
+
+#listaPeli{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    /* border-collapse: collapse; */
+
+}
+#listaPelicula{
+    width: 100%;
+   
+}
+tr{
+    color: black;
+}
+
+#importe{
+    text-align: right;
+}

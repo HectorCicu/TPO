@@ -25,22 +25,19 @@
       type="image/x-icon"
       href="{{url_for('static', filename='img/favicon.ico')}}"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> -->
   </head>
   <body>
     <header>
       <nav class="navBar"></nav>
     </header>
-    <main class="infoVideo" id="infoVideos">
-        <main class="container">
-   
-            <br />
-    
-            <div>
+    <main class="infoVideo container" id="listaPeli">
+       
+            
                 <h1>Peliculas alquiladas</h1>
-                <table>
+                <table id="listaPelicula" class="container">
                     <thead>
-                        <tr>
+                        <tr id = "tr_listapeli">
                             <th scope="col">Fecha Alquiler</th>
                             <th scope="col">Título</th>
                             <th scope="col">año</th>
@@ -53,7 +50,7 @@
                       
                     </tbody>
                 </table>
-            </div>
+           
     </main>
 
     <footer class="piePagina" id="piePag"></footer>
