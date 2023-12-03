@@ -81,44 +81,47 @@ let menuHamb = document.getElementById("hamburguesa");
  * entre películas y series
  */
 
-//if (urlInfo.includes("index.html")) {
+
 if (document.title == "TPO Grupo 18 - Index") {
-  localStorage.removeItem("username")
+  localStorage.removeItem("username");
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
-
   menuHamb.style.display = "none";
+
 } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-  //else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   infoVideo.style.display = "none";
+
 } else if (document.title == "TPO Grupo 18 - Alquilar Peliculas") {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
+
 } else if (document.title == "TPO Grupo 18 - Quienes Somos") {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
+
 } else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
-
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
+
 } else if (document.title == "TPO Grupo 18 - ListaVideos") {
-  //else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
 }
-/** genero formulario de nuevo usuario */
+/** 
+ * genero formulario de nuevo usuario 
+ */
 registro.addEventListener("click", () => {
   let formularioIngreso = `<form class="form" id="nuevoUsuario" action="https://formspree.io/f/mgejrbwa"
   method="POST"> 
@@ -151,6 +154,9 @@ registro.addEventListener("click", () => {
   nuevoUsuario();
 });
 
+/**
+ * Genero formulario de ingreso
+ */
 ingreso.addEventListener(
   "click",
   () => {
@@ -180,6 +186,10 @@ ingreso.addEventListener(
     aside1.innerHTML = formulario;
     loginRegister_Ingresar();
   },
+
+/**
+ * voy a la página "quienes somos" cuando presiono el botón.
+ */
   quienes.addEventListener("click", (e) => {
     e.preventDefault;
     window.location.href = "/quienesSomos";
