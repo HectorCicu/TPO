@@ -1,12 +1,12 @@
 /** este js es para alquilar películas  */
 
-/** 
- * con esta sentencia voy a la página principal si pulso desde 'Quienes somos' sin 
- * estar loggeado 
+/**
+ * con esta sentencia voy a la página principal si pulso desde 'Quienes somos' sin
+ * estar loggeado
  */
-console.log(localStorage.getItem("username") + "   --username de alquiler")
-if(!localStorage.getItem("username")){
-  window.location.href = "/"
+console.log(localStorage.getItem("username") + "   --username de alquiler");
+if (!localStorage.getItem("username")) {
+  window.location.href = "/";
 }
 let cliente = document.querySelector("#cliente");
 let clien = localStorage.getItem("username");
@@ -67,7 +67,6 @@ function botonClickeado(button) {
   let valorAlquiler = document.querySelector("#precio");
   let botonAlquilar = document.getElementById("botonAlquilar");
   let director = document.getElementById("director");
-
 
   fetch(
     `https://www.omdbapi.com/?i=${button}&apikey=${omdbKey}&y=&plot=short&r=json`
@@ -156,8 +155,9 @@ document.addEventListener("DOMContentLoaded", async (e) => {
           `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
         );
         const resultado = await res.json();
-
-        listar(resultado);
+        if (resultado.Response != "False") {
+          listar(resultado);
+        }
       }
     } catch (error) {
       console.log(error);

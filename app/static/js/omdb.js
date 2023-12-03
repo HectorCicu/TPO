@@ -34,8 +34,6 @@ console.log(tipoVideo);
 
 ////  comienzo la carga de las películas //////
 
-
-
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     generoFetch(tipoVideo);
@@ -73,13 +71,13 @@ async function generoFetch(tipoV) {
     `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
   );
   const result = await response.json();
- console.log(document.title)
+  console.log(document.title);
   if (document.title == "TPO Grupo 18 - Index") {
-    console.log("entro por armar1")
+    console.log("entro por armar1");
     armar1(result);
   } else if (document.title == "TPO Grupo 18 - InfoVideos") {
     //console.log("result " + result);
-    listar(result);  //esta función está en el archivo videos.js
+    listar(result); //esta función está en el archivo videos.js
   }
 }
 
@@ -113,9 +111,10 @@ const armar1 = (result) => {
 
 const limpiarTabla = () => {
   let tabla = document.getElementById("tbody-table");
-
-  // Eliminar todas las filas (tr) de la tabla
-  while (tabla.firstChild) {
-    tabla.removeChild(tabla.firstChild);
-  }
+ // if (cant == 0) {
+    // Eliminar todas las filas (tr) de la tabla
+    while (tabla.firstChild) {
+      tabla.removeChild(tabla.firstChild);
+    }
+  //}
 };

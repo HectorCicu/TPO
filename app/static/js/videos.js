@@ -1,8 +1,8 @@
 /** este js es para buscar películas o series */
 
-/** 
- * con esta sentencia voy a la página principal si pulso desde 'Quienes somos' sin 
- * estar loggeado 
+/**
+ * con esta sentencia voy a la página principal si pulso desde 'Quienes somos' sin
+ * estar loggeado
  */
 console.log(localStorage.getItem("username") + "   --username de alquiler");
 if (!localStorage.getItem("username")) {
@@ -13,8 +13,6 @@ if (!localStorage.getItem("username")) {
 let cliente = document.querySelector("#cliente");
 let clien = localStorage.getItem("username");
 cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${clien}</h3>`;
-
-
 
 const listar = (result) => {
   console.log("limpio tABLA");
@@ -133,7 +131,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   buscarTitulo.addEventListener("input", async (e) => {
     e.preventDefault();
-    const ingresoLetra = e.target.value;
+    var ingresoLetra = e.target.value;
+   // console.log(ingresoLetra.length + "   largo ingresoletra");
 
     try {
       if (ingresoLetra.length >= 3) {
@@ -141,9 +140,11 @@ document.addEventListener("DOMContentLoaded", async () => {
           `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
         );
         const resultado = await res.json();
-        // console.log(ingresoLetra);
-        // console.log(resultado);
-        listar(resultado);
+       // console.log(ingresoLetra);
+        //console.log(resultado);
+        if (resultado.Response != "False") {
+          listar(resultado);
+        }
       }
     } catch (error) {
       console.log(error);
