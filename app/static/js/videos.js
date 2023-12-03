@@ -1,6 +1,9 @@
 /** este js es para buscar películas o series */
 
-// esta parte es para determinar que si no hay usuario, va al menu principal
+/** 
+ * con esta sentencia voy a la página principal si pulso desde 'Quienes somos' sin 
+ * estar loggeado 
+ */
 console.log(localStorage.getItem("username") + "   --username de alquiler");
 if (!localStorage.getItem("username")) {
   window.location.href = "/";
@@ -10,6 +13,8 @@ if (!localStorage.getItem("username")) {
 let cliente = document.querySelector("#cliente");
 let clien = localStorage.getItem("username");
 cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${clien}</h3>`;
+
+
 
 const listar = (result) => {
   console.log("limpio tABLA");

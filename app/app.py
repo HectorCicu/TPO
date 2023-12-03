@@ -14,12 +14,7 @@ conexion = mysql.connector.connect(
     password="root",
     database="tpog18"
 )
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'root'
-# app.config['MYSQL_DB'] = 'tpog18'
 
-# conexion = MySQL(app)
 
 
 @app.route('/')
@@ -97,7 +92,7 @@ def validar_Cliente():
     # return jsonify(data) ,200
 
 
-@app.route("/nuevoCliente", methods=["POST"])  # ESTO ES UN DECORADOR
+@app.route("/nuevoCliente", methods=["POST"])  
 def nuevoCliente():
     username = request.form['nombreUsuario']
     email = request.form['email']
@@ -117,8 +112,7 @@ def nuevoCliente():
 
         cursor = conexion.cursor()
         fecha_actual = date.today().strftime('%Y-%m-%d')
-        # fecha_formateada = fecha_actual
-
+       
         sql1 = f"SELECT * FROM clientes WHERE username = '{username}';"
         cursor.execute(sql1)
         existe = cursor.fetchone()
@@ -166,6 +160,7 @@ def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
         cursor.execute(sql0)
         existeVideo = cursor.fetchone()
         if existeVideo:
+            print("existe")
             pass
         else:
             sql3 = f"INSERT INTO `tpog18`.`videos`(`titulo`,`imdb_ID`,`genero`,`anio`) VALUES ('{titulo}','{imdbID}','{genero}',{anio});"

@@ -114,7 +114,9 @@ if (document.title == "TPO Grupo 18 - Index") {
   //else if (urlInfo.includes("infoVideos.html")) {
   imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  infoVideo.style.display = "none";
+  movies1.style.display = "none";
+  series1.style.display = "none";
+  alquilar1.style.display = "none";
 }
 /** genero formulario de nuevo usuario */
 registro.addEventListener("click", () => {

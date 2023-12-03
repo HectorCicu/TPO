@@ -1,4 +1,9 @@
 /** este js es para alquilar películas  */
+
+/** 
+ * con esta sentencia voy a la página principal si pulso desde 'Quienes somos' sin 
+ * estar loggeado 
+ */
 console.log(localStorage.getItem("username") + "   --username de alquiler")
 if(!localStorage.getItem("username")){
   window.location.href = "/"
