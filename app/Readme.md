@@ -67,4 +67,4 @@ Al ser variable parte de la cabecera (muestra diferente botones o enlaces según
 
 "__" Pantalla quienes somos "__"
 
-    Se agregó una
+    Se agregó iframe y datos del "equipo"
