@@ -2,7 +2,7 @@
  * modelo el navbar y footer para no tener que repetirlo en cada página
  */
 function alquilarPeliculas() {
-  window.location.href = "/alqularPeliculas";
+  window.location.href = "/alquilarPeliculas";
 }
 
 let navbar1 = document.querySelector(".navBar");
@@ -72,11 +72,7 @@ let menuHamb = document.getElementById("hamburguesa");
 /**
  * busco la página en la que estoy localizado, para
  * poder determinar cuáles atributos mostrar o no
- */
-//let urlInfo = window.location.href;
-/**
- * En esta parte agrego la imagen del logo, ya que el index.html está en otra carpeta diferente
- * a la del resto de las páginas.
+ *
  * Además también varío las opciones del navbar para acceder a otro sitio o consultar
  * entre películas y series
  */
