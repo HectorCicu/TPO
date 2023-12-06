@@ -36,9 +36,9 @@ console.log(tipoVideo);
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    generoFetch(tipoVideo);
+    await generoFetch(tipoVideo);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 });
 

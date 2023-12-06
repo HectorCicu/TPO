@@ -7,9 +7,9 @@ async function buscarCliente(cliente) {
 
   var cli1=[]
   for (let i = 0; i < clientes.clientes.length; ++i) {
-    //console.log(Object.values(clientes) + '  <<<< values   >>>>')
-    console.log(clientes.clientes[i].username + "      USERNAME");
-    console.log(cliente + '   zzzzz cliente cargado del form')
+    
+    // console.log(clientes.clientes[i].username + "      USERNAME");
+    // console.log(cliente + '   zzzzz cliente cargado del form')
     if (clientes.clientes[i].username == cliente) {
 
        cli1 = [clientes.clientes[i].username, clientes.clientes[i].password ];
@@ -24,7 +24,7 @@ async function loginRegister_Ingresar() {
   let password;
   var btnLogin = document.querySelector("#buttonI1");
   var btnForgotPass = document.querySelector("#buttonFP");
-  console.log("entre en loginregister2");
+  //console.log("entre en loginregister2");
   btnLogin.addEventListener("click", async (e) => {
     e.preventDefault();
     let usuario1 = document.getElementById("usuarioIngreso").value;
@@ -33,8 +33,6 @@ async function loginRegister_Ingresar() {
     // alert(password1);
     var cli = await buscarCliente(usuario1);
  
-
-
     if (usuario1 != cli[0]) {
 
       alert("Usuario incorrecto");

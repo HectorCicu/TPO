@@ -40,7 +40,7 @@ const CABECERA = `<div id="logoCia"></div><div id="titulo">
 
 navbar1.innerHTML = CABECERA;
 
-//navbar1.innerHTML = CABECERA;
+
 
 /**
  * prepara el footer para no tener que copiarlo en cada página
@@ -51,6 +51,7 @@ const ANIO = new Date().getFullYear();
 let pieDePagina = `  <div>&copy ${ANIO} -  Héctor Hugo Cicutti  - TPO "Grupo 18" | Todos los derechos reservados</div>
 `;
 footer1.innerHTML = pieDePagina;
+
 let ingreso = document.querySelector("#login");
 let registro = document.querySelector("#signIn");
 let quienes = document.querySelector("#quienes");
@@ -115,7 +116,10 @@ if (document.title == "TPO Grupo 18 - Index") {
   series1.style.display = "none";
   alquilar1.style.display = "none";
 }
-/** 
+
+
+
+/** ************************************************************
  * genero formulario de nuevo usuario 
  */
 registro.addEventListener("click", () => {
@@ -150,7 +154,7 @@ registro.addEventListener("click", () => {
   nuevoUsuario();
 });
 
-/**
+/************************************************************
  * Genero formulario de ingreso
  */
 ingreso.addEventListener(

@@ -8,13 +8,14 @@ from datetime import date
 app = Flask(__name__)
 CORS(app)
 # conexión a base de datos
-conexion = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="tpog18"
-)
-
+def conectar_db():
+    conexion = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="tpog18"
+    )
+    return conexion
 
 
 @app.route('/')
@@ -62,6 +63,7 @@ def validar_cliente():
     data = {}
 
     try:
+        conexion = conectar_db()
         cursor = conexion.cursor()
 
         sql = "SELECT * FROM tpog18.clientes;"
@@ -84,7 +86,8 @@ def validar_cliente():
 
         data['clientes'] = clientes_formateados
         # data['mensaje'] = 'Éxito'
-
+        cursor.close()
+        conexion.close()
         return jsonify(data), 200
     except Exception as e:
         print(e)
@@ -99,18 +102,10 @@ def nuevoCliente():
     passwd = request.form['passw']
 
     try:
-        conexion = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
-            database="tpog18"
-        )
-        if conexion.is_connected():
-            print("Conexión exitosa a la base de datos")
-        else:
-            print("No hay conexión a la base de datos")
-
+        
+        conexion = conectar_db()
         cursor = conexion.cursor()
+
         fecha_actual = date.today().strftime('%Y-%m-%d')
        
         sql1 = f"SELECT * FROM clientes WHERE username = '{username}';"
@@ -120,8 +115,11 @@ def nuevoCliente():
         if existe:
             return jsonify({"mensaje": "1"}), 200
 
-        sql = f"INSERT INTO `clientes` (`username`, `email`, `password`, `fecha_alta`) VALUES ('{username}', '{email}', '{passwd}', '{fecha_actual}');"
-        cursor.execute(sql)
+        # sql = f"INSERT INTO `clientes` (`username`, `email`, `password`, `fecha_alta`) VALUES ('{username}', '{email}', '{passwd}', '{fecha_actual}');"
+        sqla = "INSERT INTO `clientes` (`username`, `email`, `password`, `fecha_alta`) VALUES (%s,%s,%s,%s);" 
+        valores = (username, email, passwd, fecha_actual)
+        
+        cursor.execute(sqla,valores)
 
         conexion.commit()
 
@@ -137,19 +135,10 @@ def nuevoCliente():
 def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
     titulo = titulo.replace("'", " ")
     try:
-
-        conexion = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
-            database="tpog18"
-        )
-        if conexion.is_connected():
-            print("Conexión exitosa a la base de datos")
-        else:
-            print("No hay conexión a la base de datos")
-
+ 
+        conexion = conectar_db()
         cursor = conexion.cursor()
+
         fecha_alquiler = date.today().strftime('%Y-%m-%d')
 
         sql2 = f"INSERT INTO `tpog18`.`alqulervideos`(`username`,`imdbID`,`precio`,`fechaAlquiler`) VALUES ('{username}','{imdbID}',{precio},'{fecha_alquiler}');"
@@ -177,24 +166,17 @@ def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
 @app.route("/listadoPeliculas/<string:user>", methods=["GET"])
 def listadoPeliculas(user):
     try:
-        conexion = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
-            database="tpog18"
-        )
-        if conexion.is_connected():
-            print("Conexión exitosa a la base de datos")
-        else:
-            print("No hay conexión a la base de datos")
-
+       
+        conexion = conectar_db()
         cursor = conexion.cursor()
+
         sql5 = f"SELECT fechaAlquiler, titulo, anio, genero, precio FROM tpog18.alqulervideos LEFT JOIN tpog18.videos ON alqulervideos.imdbID = videos.imdb_ID WHERE username = '{user}' ORDER BY fechaAlquiler desc;"
         cursor.execute(sql5)
         data = cursor.fetchall()
         conexion.commit()
 
         cursor.close()
+        conexion.close()
         return jsonify(data)
     except:
         return jsonify({"error": "no se ha podido obtener los datos del usuario"}), 400
