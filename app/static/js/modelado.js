@@ -48,7 +48,7 @@ navbar1.innerHTML = CABECERA;
 
 var footer1 = document.querySelector(".piePagina");
 const ANIO = new Date().getFullYear();
-let pieDePagina = `  <div>&copy ${ANIO} -  Héctor Hugo Cicutti  - TPO "Grupo 18" | Todos los derechos reservados</div>
+let pieDePagina = `  <div>&copy ${ANIO} -  Héctor Hugo Cicutti  - TPO "Grupo 18"   |   Todos los derechos reservados</div>
 `;
 footer1.innerHTML = pieDePagina;
 

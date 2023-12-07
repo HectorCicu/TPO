@@ -74,8 +74,9 @@ th {
 }
 #botonBuscarVideo {
   border-radius: 5px;
-  background-color: black;
+   background-color: #7303c0; 
   color: white;
+  font-family: var(--ff1);
   font-size: 0.7em;
 }
 #botonBuscarVideo:hover {

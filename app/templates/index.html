@@ -16,8 +16,15 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Rubik+Iso&family=Yanone+Kaffeesatz&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
-    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{url_for('static', filename='img/favicon.ico')}}"
+    />
   </head>
   <body>
     <header>
@@ -36,11 +43,13 @@
         <div class="container" id="informacion">
           <h2 id="aside-contenidoInicial">Información General</h2>
           <span id="aside-span">
-            Este es un portal para consultar sus películas y series preferidas.
-            <br />
-            <br />También puede alquilar películas vía Streaming
-            <br />
-            <br />Ingrese o Regístrese para visualizar el contenido.
+            <span id="referencia">En este portal usted podrá: </span>
+            <div id="infoGral">
+              - Alquilar por streaming sus películas preferidas.
+
+              <br />- Consular sus películas o series preferidas <br /><br />
+              <span id="registrar">Ingrese o Regístrese para disfrutar</span>
+            </div>
           </span>
         </div>
         <div class="container contenedor" id="peliculaMuestra">
