@@ -81,40 +81,41 @@ let menuHamb = document.getElementById("hamburguesa");
 
 if (document.title == "TPO Grupo 18 - Index") {
   localStorage.removeItem("username");
-  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  
+  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
   menuHamb.style.display = "none";
 
 } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   infoVideo.style.display = "none";
 
 } else if (document.title == "TPO Grupo 18 - Alquilar Peliculas") {
-  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
   alquilar1.style.display = "none";
 
 } else if (document.title == "TPO Grupo 18 - Quienes Somos") {
-  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
 
 } else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
-  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
 
 } else if (document.title == "TPO Grupo 18 - ListaVideos") {
-  imgLogo.innerHTML = `<img src='./static/img/film.jpg' alt="Logo Compañía" id="logoCia" />`;
+  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
   movies1.style.display = "none";
   series1.style.display = "none";
-  alquilar1.style.display = "none";
+  // alquilar1.style.display = "none";
 }
 
 

@@ -68,17 +68,18 @@ nav ul {
   border-radius: 8px;
 
   font-weight: bold;
-  background: #636363; /* fallback for old browsers */
+  
+   background: #636363; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #a2ab58,
-    #636363
-  ); /* Chrome 10-25, Safari 5.1-6 */
+    #8358ab,
+    #9f86c0 
+  ); 
   background: linear-gradient(
     to right,
-    #a2ab58,
-    #636363
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    #8358ab,
+    #9f86c0
+  ); 
 }
 .menubar > li:hover {
   background: #f09819; /* fallback for old browsers */
