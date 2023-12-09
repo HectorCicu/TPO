@@ -18,14 +18,7 @@ const CABECERA = `<div id="logoCia"></div><div id="titulo">
     
     <!-- </div> -->
   </div>
-  <ul class="menubar">
-    <li><a href="" id="movies" value="movie" class="menu11">Peliculas</a></li>
-    <li><a href="" id="series" value="series" class="menu11">Series</a></li>
-    <li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
-    <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consultar Peliculas y Series</a></li>
-    <li><a href='/'>Salir</a></li>
-    
-  </ul>
+  <ul class="menubar"></ul>
 </div>
 <div class="container" id="hamburguesa">
   <input type="checkbox" id="menu">
@@ -39,8 +32,6 @@ const CABECERA = `<div id="logoCia"></div><div id="titulo">
 </div>`;
 
 navbar1.innerHTML = CABECERA;
-
-
 
 /**
  * prepara el footer para no tener que copiarlo en cada página
@@ -61,10 +52,10 @@ let aside1 = document.querySelector("#aside1");
  * para mostrar u ocultar los distintos botones o accesos.
  */
 let menubar = document.querySelector(".menubar");
-let movies1 = document.getElementById("movies");
-let series1 = document.getElementById("series");
-let alquilar1 = document.getElementById("alquilar");
-let infoVideo = document.getElementById("infoVideo");
+// let movies1 = document.getElementById("movies");
+// let series1 = document.getElementById("series");
+// let alquilar1 = document.getElementById("alquilar");
+// let infoVideo = document.getElementById("infoVideo");
 let quienesSomos = document.getElementById("quienesSomos");
 let botones = document.querySelector("#btns");
 let imgLogo = document.getElementById("logoCia");
@@ -77,51 +68,64 @@ let menuHamb = document.getElementById("hamburguesa");
  * Además también varío las opciones del navbar para acceder a otro sitio o consultar
  * entre películas y series
  */
-
+imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
 
 if (document.title == "TPO Grupo 18 - Index") {
   localStorage.removeItem("username");
-  
-  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+
+  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   menubar.style.display = "none";
   menuHamb.style.display = "none";
-
 } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  infoVideo.style.display = "none";
+  // infoVideo.style.display = "none";
 
+  botonesLibres = `<li><a href="" id="movies" value="movie" class="menu11">Películas</a></li>
+    <li><a href="" id="series" value="series" class="menu11">Series</a></li>
+    <li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+    <li><a href='/'>Salir</a></li>`;
+  menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Alquilar Peliculas") {
-  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  movies1.style.display = "none";
-  series1.style.display = "none";
-  alquilar1.style.display = "none";
-
-} else if (document.title == "TPO Grupo 18 - Quienes Somos") {
-  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
-  botones.style.display = "none";
-  movies1.style.display = "none";
-  series1.style.display = "none";
-
-} else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
-  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
-  botones.style.display = "none";
-  movies1.style.display = "none";
-  series1.style.display = "none";
-
-} else if (document.title == "TPO Grupo 18 - ListaVideos") {
-  imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
-  botones.style.display = "none";
-  movies1.style.display = "none";
-  series1.style.display = "none";
+  // movies1.style.display = "none";
+  // series1.style.display = "none";
   // alquilar1.style.display = "none";
+  botonesLibres = `<li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
+  <li><a href='/'>Salir</a></li>`;
+  menubar.innerHTML = botonesLibres;
+} else if (document.title == "TPO Grupo 18 - Quienes Somos") {
+  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  botones.style.display = "none";
+  // movies1.style.display = "none";
+  // series1.style.display = "none";
+  botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+  <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
+  <li><a href='/'>Salir</a></li>`;
+  menubar.innerHTML = botonesLibres;
+} else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
+  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  botones.style.display = "none";
+  // movies1.style.display = "none";
+  // series1.style.display = "none";
+  botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+  <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
+  <li><a href='/'>Salir</a></li>`;
+  menubar.innerHTML = botonesLibres;
+} else if (document.title == "TPO Grupo 18 - ListaVideos") {
+  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  botones.style.display = "none";
+  // movies1.style.display = "none";
+  // series1.style.display = "none";
+  botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
+  <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
+  <li><a href='/'>Salir</a></li>`;
+  menubar.innerHTML = botonesLibres;
 }
 
-
-
 /** ************************************************************
- * genero formulario de nuevo usuario 
+ * genero formulario de nuevo usuario
  */
 registro.addEventListener("click", () => {
   let formularioIngreso = `<form class="form" id="nuevoUsuario" action="https://formspree.io/f/mgejrbwa"
@@ -161,7 +165,7 @@ registro.addEventListener("click", () => {
 ingreso.addEventListener(
   "click",
   () => {
-    let formulario = `<form class="form">
+    let formulario = `<form class="form" id="ingresoForm">
   <p id="heading">Ingreso</p>
      <div class="field">
        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 14 14">
@@ -188,9 +192,9 @@ ingreso.addEventListener(
     loginRegister_Ingresar();
   },
 
-/**
- * voy a la página "quienes somos" cuando presiono el botón.
- */
+  /**
+   * voy a la página "quienes somos" cuando presiono el botón.
+   */
   quienes.addEventListener("click", (e) => {
     e.preventDefault;
     window.location.href = "/quienesSomos";

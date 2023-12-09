@@ -48,7 +48,7 @@ const listar = (result) => {
     //agrego un botón para seleccionar cualquiera de los videos listado y mostrar en el aside sus datos.
     let td5 = document.createElement("td");
     let boton = document.createElement("button");
-    boton.textContent = `Detalle`;
+    boton.textContent = `Ver Detalle`;
     boton.id = `botonBuscarVideo`;
     //agrego como propiedad de valor de cada botón el código de IMDB, y así al presionar busco en la API por ese código
     boton.value = `${result.Search[i].imdbID}`;

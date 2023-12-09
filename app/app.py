@@ -145,6 +145,7 @@ def compraPeliculas(titulo, precio, imdbID, genero, anio, username):
         cursor.execute(sql2)
 
         # busco si existe ese video en la tabla videos. Si existe no realizo acción, sino guardo el dato.
+        # solo es para tenerlo en la base y mostrarlo más rápido en la información de videos alquilados
         sql0 = f"SELECT imdb_ID from tpog18.videos WHERE imdb_ID = '{imdbID}'"
         cursor.execute(sql0)
         existeVideo = cursor.fetchone()

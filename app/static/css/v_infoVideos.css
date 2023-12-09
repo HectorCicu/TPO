@@ -6,7 +6,8 @@
 
   display: grid;
   grid-template-columns: 5fr 3fr;
-  grid-auto-flow: colum;
+  grid-template-rows:auto;
+  /* grid-auto-flow: colum; */
   padding-top: 10px;
   padding-bottom: 25px;
 }
