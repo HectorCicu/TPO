@@ -21,7 +21,7 @@ function nuevoUsuario() {
           alert("El usuario ya Existe");
           window.location.href = "/";
         } else {
-          alert("Usted ha sido dado de Alta!");
+          alert("Usted ha sido dado de Alta! " + data.nombre);
           localStorage.setItem("username", data.nombre);
           window.location.href = "/infoVideos";
         }
