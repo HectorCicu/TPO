@@ -153,7 +153,8 @@ registro.addEventListener("click", () => {
           </button>
         </div>
         <textarea name="message" id="txt-registro">Solicitud de nuevo usuario - TPO - Grupo18 - Comisión #23526</textarea>
-        </form>`;
+        </form>
+        <div id="cartel"></div>`;
   aside1.innerHTML = formularioIngreso;
 
   nuevoUsuario();

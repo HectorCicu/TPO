@@ -19,12 +19,44 @@ function nuevoUsuario() {
         console.log(data);
         if (data.mensaje == "1") {
           alert("El usuario ya Existe");
-          window.location.href = "/";
+          login(1, "");
+          // window.location.href = "/";
         } else {
-          alert("Usted ha sido dado de Alta! " + data.nombre);
+          //alert("Usted ha sido dado de Alta! " + data.nombre);
+          login(0, data.nombre);
           localStorage.setItem("username", data.nombre);
-          window.location.href = "/infoVideos";
+          // window.location.href = "/infoVideos";
         }
       });
   });
+}
+
+function login(valor, nombre) {
+
+  if (valor == 0) {
+    const cartel = document.getElementById("cartel");
+    let info = `      <div id="modal">
+  <div id="cartelOk">
+  <img src="../static/img/ok2.png" alt="" id="imgOk" />
+  <h1> ${nombre}  ha sido dado de alta!</h1> </div>
+<button id="botonOK" type="submit">Pulse aquí para continuar</button>
+</div>`;
+    cartel.innerHTML = info;
+    document.getElementById("botonOK").addEventListener("click", () => {
+      window.location.href = "/infoVideos";
+    });
+  }else {
+    const cartel = document.getElementById("cartel");
+    let info = `<div id="modal2">
+    <div id="cartelnoOk">
+    <img src="../static/img/alerta.png" alt="" id="imgnoOk" />
+    <h1>Ese nombre de usuario ya Existe</h1>
+  </div>
+  <button id="botonOK" type="submit">Pulse aquí para continuar</button>
+</div>`;
+    cartel.innerHTML = info;
+    document.getElementById("botonOK").addEventListener("click", () => {
+      window.location.href = "/";
+    });
+  }
 }
