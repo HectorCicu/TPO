@@ -4,7 +4,7 @@
 
 const carousel = document.querySelector("#carousel-examples");
 
-let omdbKey = "2677da8c";
+let omdbKey =  "2677da8c";
 
 /**
  * genero los atributos del principio y fin del carousel de posters de

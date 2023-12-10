@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, url_for, jsonify, redirect 
-#from flask_mysqldb import MySQL
+from flask import Flask, render_template, request, url_for, jsonify
+
 from flask_cors import CORS
 import mysql.connector
 import random
