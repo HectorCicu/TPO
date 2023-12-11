@@ -25,9 +25,8 @@ const CABECERA = `<div id="logoCia"></div><div id="titulo">
   <label for="menu" id="label-hamburguesa"> ☰ </label>
   <ul id="ul-hamburguesa">
     <li id="li-hamburguesa"><a href='/listaPeliculas'}}>Películas Alquiladas</a></li>
+    <li id="li-hamburguesa"><a href='/eliminarCuenta'>Eliminar Cuenta</a></li>
     <li id="li-hamburguesa"><a href='/quienesSomos'>Quienes Somos</a></li>
-   
-        
   </ul>
 </div>`;
 
@@ -77,9 +76,7 @@ if (document.title == "TPO Grupo 18 - Index") {
   menubar.style.display = "none";
   menuHamb.style.display = "none";
 } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  // infoVideo.style.display = "none";
 
   botonesLibres = `<li><a href="" id="movies" value="movie" class="menu11">Películas</a></li>
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
@@ -87,41 +84,31 @@ if (document.title == "TPO Grupo 18 - Index") {
     <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Alquilar Peliculas") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
-  // alquilar1.style.display = "none";
   botonesLibres = `<li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Quienes Somos") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
   botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
   <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
   botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
   <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - ListaVideos") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
+
   botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
   <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
+} else if (document.title == "TPO Grupo 18 - Eliminar Cliente") {
+  botones.style.display = "none";
 }
 
 /** ************************************************************

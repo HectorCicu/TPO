@@ -52,6 +52,10 @@ def listaPeliculas():
 def ventanaPago():
     return render_template('ventanaPago.html')
 
+@app.route('/eliminarCuenta')
+def eliminarCuenta():
+    return render_template('eliminarCuenta.html')
+
 
 @app.route('/N/A')
 def not_available():
