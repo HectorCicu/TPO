@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
       const ingresoDato = e.target.value;
 
       if (e.target.id == "password_field") {
-        // console.log(e.target.id);
+      
         nombreCC.innerHTML = ingresoDato;
       }
       if (e.target.id == "password_field1") {
-        // console.log(e.target.id);
+       
         nroFormateado =
           ingresoDato.substring(0, 4) +
           " " +

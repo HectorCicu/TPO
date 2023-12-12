@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ///////////////////////////
 async function generoFetch(tipoV) {
-  //console.log("entre en generofetch")
 
   //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
 
@@ -76,7 +75,7 @@ async function generoFetch(tipoV) {
     console.log("entro por armar1");
     armar1(result);
   } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-    //console.log("result " + result);
+
     listar(result); //esta función está en el archivo videos.js
   }
 }
@@ -94,7 +93,7 @@ function crearTarjeta(e) {
 /// Armo el carousel con las tarjetas  ///
 const armar1 = (result) => {
   for (let i = 0; i < result.Search.length; ++i) {
-    //  console.log(result.Search[i].Title);
+ 
     if (i == 0) {
       html +=
         `<div class="carousel-item active">` + crearTarjeta(result.Search[i]); //se genera la tarjeta con que comienza el carousel
@@ -111,10 +110,9 @@ const armar1 = (result) => {
 
 const limpiarTabla = () => {
   let tabla = document.getElementById("tbody-table");
- // if (cant == 0) {
-    // Eliminar todas las filas (tr) de la tabla
+
     while (tabla.firstChild) {
       tabla.removeChild(tabla.firstChild);
     }
-  //}
+  
 };

@@ -7,9 +7,7 @@ async function buscarCliente(cliente) {
 
   var cli1=[]
   for (let i = 0; i < clientes.clientes.length; ++i) {
-    
-    // console.log(clientes.clientes[i].username + "      USERNAME");
-    // console.log(cliente + '   zzzzz cliente cargado del form')
+ 
     if (clientes.clientes[i].username == cliente) {
 
        cli1 = [clientes.clientes[i].username, clientes.clientes[i].password ];
@@ -24,13 +22,13 @@ async function loginRegister_Ingresar() {
   let password;
   var btnLogin = document.querySelector("#buttonI1");
   var btnForgotPass = document.querySelector("#buttonFP");
-  //console.log("entre en loginregister2");
+
   btnLogin.addEventListener("click", async (e) => {
     e.preventDefault();
     let usuario1 = document.getElementById("usuarioIngreso").value;
-    //  alert(usuario1);
+
     let password1 = document.getElementById("password01").value;
-    // alert(password1);
+
     var cli = await buscarCliente(usuario1);
  
     if (usuario1 != cli[0]) {
@@ -41,9 +39,7 @@ async function loginRegister_Ingresar() {
       alert("Contraseña Incorrecta");
       aside1.innerHTML = formularioIngreso;
     }
-    // sessionStorage.setItem("usuario", usuario1);
-    // sessionStorage.setItem("password", password1);
-    //infoVideos()
+   
     localStorage.setItem("username",cli[0])
     window.location.href = "/infoVideos";
    
@@ -71,3 +67,4 @@ comisión #23526</textarea>
     aside1.innerHTML = forgotPassw;
   });
 }
+//  mysql -h hcicutti.mysql.pythonanywhere-services.com -u hcicutti -p
