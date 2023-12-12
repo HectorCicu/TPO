@@ -12,7 +12,6 @@ let cliente = document.querySelector("#cliente");
 let clien = localStorage.getItem("username");
 cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${clien}</h3>`;
 
-/** OJO!! falta hacer el botón de compra! */
 const listar = (result) => {
   limpiarTabla();
   let tabla = document.getElementById("tbody-table");
@@ -81,8 +80,6 @@ function botonClickeado(button) {
         let calificacionIMDB = parseInt(
           data.Ratings[0].Value.substring(0, posicBarraIMDB)
         );
-
-        // console.log("calificacion imdb " + calificacionIMDB);
 
         let anioPeli = parseInt(data.Year);
         const ANIOACTUAL = new Date().getFullYear(); // recupero el año actual para calcular coef. pago

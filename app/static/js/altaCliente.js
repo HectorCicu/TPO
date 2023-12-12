@@ -7,7 +7,7 @@ function nuevoUsuario() {
     e.preventDefault();
 
     const formData = new FormData(documento); // Obtener los datos del formulario
-    // console.log(formData + "  formdata");
+
     fetch(URL + "/nuevoCliente", {
       // Enviar los datos al servidor
       method: "POST", // Metodo de envio
@@ -18,11 +18,11 @@ function nuevoUsuario() {
         // Mostrar los datos en consola
         console.log(data);
         if (data.mensaje == "1") {
-          // alert("El usuario ya Existe");
+
           login(1, "");
-          // window.location.href = "/";
+  
         } else {
-          //alert("Usted ha sido dado de Alta! " + data.nombre);
+
           login(0, data.nombre);
           localStorage.setItem("username", data.nombre);
         

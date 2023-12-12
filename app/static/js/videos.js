@@ -111,7 +111,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       tipoVideo = "series";
 
-      // console.log("vamos por series");
       generoFetch(tipoVideo);
     } catch (error) {
       console.log(error);
@@ -132,7 +131,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   buscarTitulo.addEventListener("input", async (e) => {
     e.preventDefault();
     var ingresoLetra = e.target.value;
-   // console.log(ingresoLetra.length + "   largo ingresoletra");
 
     try {
       if (ingresoLetra.length >= 3) {
@@ -140,8 +138,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
         );
         const resultado = await res.json();
-       // console.log(ingresoLetra);
-        //console.log(resultado);
+
         if (resultado.Response != "False") {
           listar(resultado);
         }

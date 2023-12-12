@@ -3,7 +3,7 @@ var usuario = localStorage.getItem("username");
   //Agrego nombre de usuario al header
   let cliente = document.querySelector("#cliente");
   cliente.innerHTML = `<h3 id="cliente1">BIENVENIDO!  ${usuario}</h3>`;
-// usuario = "usuario001";
+
 fetch(URLp + "/listadoPeliculas/" + usuario) // Obtener los productos
   .then((res) => res.json()) // Convertir la respuesta a JSON
   .then((data) => {

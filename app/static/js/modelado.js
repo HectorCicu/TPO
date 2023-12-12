@@ -6,7 +6,7 @@ function alquilarPeliculas() {
 }
 
 let navbar1 = document.querySelector(".navBar");
-// <img src="../img/film.jpg" alt="Logo Compañía" id="logoCia" />
+
 const CABECERA = `<div id="logoCia"></div><div id="titulo">
 <h1 class="titulo-principal">Portal de Videos</h1>
 <div id="cliente"></div></div>
@@ -52,10 +52,7 @@ let aside1 = document.querySelector("#aside1");
  * para mostrar u ocultar los distintos botones o accesos.
  */
 let menubar = document.querySelector(".menubar");
-// let movies1 = document.getElementById("movies");
-// let series1 = document.getElementById("series");
-// let alquilar1 = document.getElementById("alquilar");
-// let infoVideo = document.getElementById("infoVideo");
+
 let quienesSomos = document.getElementById("quienesSomos");
 let botones = document.querySelector("#btns");
 let imgLogo = document.getElementById("logoCia");
@@ -73,13 +70,13 @@ imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compa
 if (document.title == "TPO Grupo 18 - Index") {
   localStorage.removeItem("username");
 
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+ 
   menubar.style.display = "none";
   menuHamb.style.display = "none";
 } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  
   botones.style.display = "none";
-  // infoVideo.style.display = "none";
+ 
 
   botonesLibres = `<li><a href="" id="movies" value="movie" class="menu11">Películas</a></li>
     <li><a href="" id="series" value="series" class="menu11">Series</a></li>
@@ -87,37 +84,32 @@ if (document.title == "TPO Grupo 18 - Index") {
     <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Alquilar Peliculas") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
-  // alquilar1.style.display = "none";
+  
   botonesLibres = `<li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Quienes Somos") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+ 
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
+
   botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
   <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - Pago Alquiler") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+ 
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
+
   botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
   <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
   menubar.innerHTML = botonesLibres;
 } else if (document.title == "TPO Grupo 18 - ListaVideos") {
-  // imgLogo.innerHTML = `<img src='./static/img/icons8-pelicula.gif' alt="Logo Compañía" id="logoCia" />`;
+  
   botones.style.display = "none";
-  // movies1.style.display = "none";
-  // series1.style.display = "none";
+
   botonesLibres = `<li><a href='/alquilarPeliculas' id="alquilar" value="alquilar"  class="menu11">Alquilar Película</a></li>
   <li><a href='/infoVideos' id="infoVideo" value="infoVideo" class="menu2">Consulta Películas y Series</a></li>
   <li><a href='/'>Salir</a></li>`;
