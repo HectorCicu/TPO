@@ -4,7 +4,7 @@
 
 const carousel = document.querySelector("#carousel-examples");
 
-let omdbKey =  "2677da8c";
+// let omdbKey =  "2677da8c";
 
 /**
  * genero los atributos del principio y fin del carousel de posters de
@@ -42,13 +42,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+async function getAPIKEY() {
+  const resApi = await fetch("/api_key");
+  const omdbK = await resApi.json();
+  console.log(omdbK.api_key)
+  return omdbK.api_key;
+}
 ///////////////////////////
 async function generoFetch(tipoV) {
-
   //hago búsquedas 'randoms' para mostrar diferentes películas cuando se ingresa o refresca la página
 
-  parametro = Math.round(Math.random() * 1000, 0) % 5;
+  // Utiliza la clave de la API en tu código JavaScript
 
+  parametro = Math.round(Math.random() * 1000, 0) % 5;
+  omdbKey = await getAPIKEY()
+  console.log(omdbKey + "  oimdg")
   switch (parametro) {
     case 1:
       busqueda = "the";
@@ -67,7 +75,8 @@ async function generoFetch(tipoV) {
   }
 
   const response = await fetch(
-    `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${busqueda}"&page=${pagina}&type=${tipoV}`
+ 
+    `https://www.omdbapi.com/?&apikey="${omdbKey}"&s="${busqueda}"&page=${pagina}&type=${tipoV}`
   );
   const result = await response.json();
   console.log(document.title);
@@ -75,7 +84,6 @@ async function generoFetch(tipoV) {
     console.log("entro por armar1");
     armar1(result);
   } else if (document.title == "TPO Grupo 18 - InfoVideos") {
-
     listar(result); //esta función está en el archivo videos.js
   }
 }
@@ -93,7 +101,6 @@ function crearTarjeta(e) {
 /// Armo el carousel con las tarjetas  ///
 const armar1 = (result) => {
   for (let i = 0; i < result.Search.length; ++i) {
- 
     if (i == 0) {
       html +=
         `<div class="carousel-item active">` + crearTarjeta(result.Search[i]); //se genera la tarjeta con que comienza el carousel
@@ -111,8 +118,7 @@ const armar1 = (result) => {
 const limpiarTabla = () => {
   let tabla = document.getElementById("tbody-table");
 
-    while (tabla.firstChild) {
-      tabla.removeChild(tabla.firstChild);
-    }
-  
+  while (tabla.firstChild) {
+    tabla.removeChild(tabla.firstChild);
+  }
 };
