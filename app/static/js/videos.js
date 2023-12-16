@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       if (ingresoLetra.length >= 3) {
         const res = await fetch(
-          `https://www.omdbapi.com/?&apikey="${omdbKey}"&s="${ingresoLetra}&type=${tipoVideo}`
+          `https://www.omdbapi.com/?&apikey=${omdbKey}&s="${ingresoLetra}&type=${tipoVideo}`
         );
         const resultado = await res.json();
 
