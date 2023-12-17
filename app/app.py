@@ -4,9 +4,18 @@ from flask_cors import CORS
 import mysql.connector
 import random
 from datetime import date
+import os
 
+api_key = os.environ.get('API_KEY_OMDB')
+# print (api_key)
 app = Flask(__name__)
 CORS(app)
+
+
+@app.route('/api_key')
+def get_api_key():
+    return jsonify(api_key=api_key)
+
 # conexión a base de datos
 def conectar_db():
     conexion = mysql.connector.connect(
